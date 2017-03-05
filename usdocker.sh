@@ -25,7 +25,7 @@ then
     echo You need to pass the useful script service you want:
     echo
     echo Available:
-    find "${USD_DIR}" -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort
+    find "${USD_DIR}/." -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort
     echo
     exit 1
 fi
@@ -43,7 +43,9 @@ shift
 if [ -z $1 ]
 then
     echo Available usefull script:
-    find "${USD_DIR}/$USD_SERVICE/" -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
+    find "${USD_DIR}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
+    echo
+    cat "${USD_DIR}/$USD_SERVICE/README.md"
     echo
     exit 1
 fi
