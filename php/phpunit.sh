@@ -8,7 +8,7 @@ docker run -it --rm \
     -v /etc/group:/etc/group:ro \
     -v /tmp:/tmp \
     -v "$HOME/.ssh:$HOME/.ssh" \
-    -v "$HOME/.keys:$HOME/.keys:ro" \
-    -e TZ=America/Sao_Paulo \
-    byjg/php7:alpine composer "$@"
+    -v "$HOME/.keys:$HOME/.keys:ro"  `linkContainer` \
+    -e TZ=${TZ} \
+    byjg/php7:alpine phpunit -d error_reporting=6143 "$@"
 

@@ -6,8 +6,9 @@ docker run -it --rm \
     -w /opt/project -u $UID:${GROUPS[0]} \
     -v /etc/passwd:/etc/passwd:ro \
     -v /etc/group:/etc/group:ro \
+    -v /tmp:/tmp \
     -v "$HOME/.ssh:$HOME/.ssh" \
     -v "$HOME/.keys:$HOME/.keys:ro" \
-    -e TZ=America/Sao_Paulo \
-    byjg/php7:alpine phpcs "$@"
+    -e TZ=${TZ} \
+    byjg/php7:alpine composer "$@"
 

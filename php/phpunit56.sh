@@ -1,8 +1,5 @@
 #!/bin/bash
 
-DIR="$(dirname "$(readlink -f "$0")")"
-source "$DIR/../../docker.include.sh"
-
 docker run -it --rm \
     -v "$PWD":/opt/project \
     -v "$HOME/.composer:$HOME/.composer" \
@@ -12,6 +9,6 @@ docker run -it --rm \
     -v /tmp:/tmp \
     -v "$HOME/.ssh:$HOME/.ssh" \
     -v "$HOME/.keys:$HOME/.keys:ro"  `linkContainer` \
-    -e TZ=America/Sao_Paulo \
-    byjg/php7:alpine phpunit -d error_reporting=6143 "$@"
+    -e TZ=${TZ} \
+    byjg/php56:alpine phpunit -d error_reporting=6143 "$@"
 
