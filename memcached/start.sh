@@ -1,10 +1,10 @@
 #!/bin/bash
 
-setupEnvironment environment-memcached MEMCACHED_IMAGE memcached:alpine
-setupEnvironment environment-memcached MEMCACHED_FOLDER /var/lib/memcached
-setupEnvironment environment-memcached MEMCACHED_PORT 11211
-setupEnvironment environment-memcached MEMCACHED_MEMORY 1
-source "$USD_HOME/environment-memcached"
+setupEnvironment memcached/environment MEMCACHED_IMAGE memcached:alpine
+setupEnvironment memcached/environment MEMCACHED_FOLDER /var/lib/memcached
+setupEnvironment memcached/environment MEMCACHED_PORT 11211
+setupEnvironment memcached/environment MEMCACHED_MEMORY 1
+source "$USD_HOME/memcached/environment"
 
 docker run \
     --name memcached${CONTAINER_NAME_SUFFIX} \

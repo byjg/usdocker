@@ -1,9 +1,9 @@
 #!/bin/bash
 
-setupEnvironment environment-mssql MSSQL_IMAGE microsoft/mssql-server-linux
-setupEnvironment environment-mssql MSSQL_FOLDER /var/lib/mssql
-setupEnvironment environment-mssql MSSQL_PORT 1433
-source "$USD_HOME/environment-mssql"
+setupEnvironment mssql/environment MSSQL_IMAGE microsoft/mssql-server-linux
+setupEnvironment mssql/environment MSSQL_FOLDER /var/lib/mssql
+setupEnvironment mssql/environment MSSQL_PORT 1433
+source "$USD_HOME/mssql/environment"
 
 docker run \
     --name mssql${CONTAINER_NAME_SUFFIX} \

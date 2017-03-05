@@ -1,11 +1,11 @@
 #!/bin/bash
 
-setupEnvironment environment-postgres POSTGRES_IMAGE postgres:9-alpine
-setupEnvironment environment-postgres POSTGRES_FOLDER /var/lib/postgresql/data
-setupEnvironment environment-postgres POSTGRES_USER postgres
-setupEnvironment environment-postgres POSTGRES_PASSWORD password
-setupEnvironment environment-postgres POSTGRES_PORT 5432
-source "$USD_HOME/environment-postgres"
+setupEnvironment postgres/environment POSTGRES_IMAGE postgres:9-alpine
+setupEnvironment postgres/environment POSTGRES_FOLDER /var/lib/postgresql/data
+setupEnvironment postgres/environment POSTGRES_USER postgres
+setupEnvironment postgres/environment POSTGRES_PASSWORD password
+setupEnvironment postgres/environment POSTGRES_PORT 5432
+source "$USD_HOME/postgres/environment"
 
 docker run \
     --name postgres${CONTAINER_NAME_SUFFIX} \

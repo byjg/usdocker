@@ -1,9 +1,9 @@
 #!/bin/bash
 
-setupEnvironment environment-mongodb MONGODB_IMAGE mongo:3
-setupEnvironment environment-mongodb MONGODB_PORT 27017
-setupEnvironment environment-mongodb MONGODB_FOLDER /var/lib/mongodb
-source "$USD_HOME/environment-mongodb"
+setupEnvironment mongodb/environment MONGODB_IMAGE mongo:3
+setupEnvironment mongodb/environment MONGODB_PORT 27017
+setupEnvironment mongodb/environment MONGODB_FOLDER /var/lib/mongodb
+source "$USD_HOME/mongodb/environment"
 
 docker run \
     --name mongodb${CONTAINER_NAME_SUFFIX} \

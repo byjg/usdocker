@@ -8,7 +8,7 @@ Start the memcached service
 
 Stop the memcached service
 
-## Customize "<usd_home>/environment-memcached"
+## Customize "<usd_home>/memcached/environment"
 
 MEMCACHED_IMAGE=memcached:alpine
 MEMCACHED_FOLDER=/var/lib/memcached

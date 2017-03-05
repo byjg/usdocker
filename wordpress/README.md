@@ -6,15 +6,15 @@ Start the wordpress service
 
 ## usdocker wordpress stop
 
-## Customize "<usd_home>/environment-wordpress"
+## Customize "<usd_home>/wordpress/environment"
 
-wordpressWORDPRESS_IMAGE=wordpress
-#wordpressWORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
+WORDPRESS_IMAGE=wordpress
+#WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
 #wordpressWORDPRESS_THEME_FOLDER /var/lib/wordpress
-wordpressWORDPRESS_PORT=8080
-wordpressWORDPRESS_DB_HOST=mysql${CONTAINER_NAME_SUFFIX}:3306
-wordpressWORDPRESS_DB_USER=root
-wordpressWORDPRESS_DB_PASSWORD=password
+WORDPRESS_PORT=8080
+WORDPRESS_DB_HOST=mysql${CONTAINER_NAME_SUFFIX}:3306
+WORDPRESS_DB_USER=root
+WORDPRESS_DB_PASSWORD=password
 
 ## Customize the "<usd_home>/wordpress/conf/uploads.ini"
 

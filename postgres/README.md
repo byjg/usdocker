@@ -16,7 +16,7 @@ Connect to the postgres bash
 
 Connect to the psql client 
 
-## Customize "<usd_home>/environment-postgres"
+## Customize "<usd_home>/postgres/environment"
 
 POSTGRES_IMAGE=postgres:9-alpine
 POSTGRES_FOLDER=/var/lib/postgresql/data

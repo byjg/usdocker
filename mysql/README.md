@@ -21,7 +21,7 @@ Connect to the mysql bash interface
 Dump the database and save it to the /tmp/dump folder. 
 
 
-## Customize "<usd_home>/environment-mysql"
+## Customize "<usd_home>/mysql/environment"
 
 MYSQL_IMAGE=mysql:5.7
 MYSQL_FOLDER=/var/lib/mysql

@@ -6,14 +6,14 @@ then
     cp -r "$USD_DIR/wordpress/conf" "$USD_HOME/wordpress"
 fi
 
-setupEnvironment environment-wordpress WORDPRESS_IMAGE wordpress
-#setupEnvironment environment-wordpress WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
-#setupEnvironment environment-wordpress WORDPRESS_THEME_FOLDER /var/lib/wordpress
-setupEnvironment environment-wordpress WORDPRESS_PORT 8080
-setupEnvironment environment-wordpress WORDPRESS_DB_HOST mysql${CONTAINER_NAME_SUFFIX}:3306
-setupEnvironment environment-wordpress WORDPRESS_DB_USER root
-setupEnvironment environment-wordpress WORDPRESS_DB_PASSWORD password
-source "$USD_HOME/environment-wordpress"
+setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress
+#setupEnvironment wordpress/environment WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
+#setupEnvironment wordpress/environment WORDPRESS_THEME_FOLDER /var/lib/wordpress
+setupEnvironment wordpress/environment WORDPRESS_PORT 8080
+setupEnvironment wordpress/environment WORDPRESS_DB_HOST mysql${CONTAINER_NAME_SUFFIX}:3306
+setupEnvironment wordpress/environment WORDPRESS_DB_USER root
+setupEnvironment wordpress/environment WORDPRESS_DB_PASSWORD password
+source "$USD_HOME/wordpress/environment"
 
 docker run  \
     --name wordpress${CONTAINER_NAME_SUFFIX} `linkContainer` \

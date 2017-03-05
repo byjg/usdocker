@@ -6,10 +6,10 @@ then
     cp -r "$USD_DIR/redis/conf" "$USD_HOME/redis"
 fi
 
-setupEnvironment environment-redis REDIS_IMAGE redis:3-alpine
-setupEnvironment environment-redis REDIS_FOLDER /var/lib/redis
-setupEnvironment environment-redis REDIS_PORT 6379
-source "$USD_HOME/environment-redis"
+setupEnvironment redis/environment REDIS_IMAGE redis:3-alpine
+setupEnvironment redis/environment REDIS_FOLDER /var/lib/redis
+setupEnvironment redis/environment REDIS_PORT 6379
+source "$USD_HOME/redis/environment"
 
 docker run \
     --name redis${CONTAINER_NAME_SUFFIX} \

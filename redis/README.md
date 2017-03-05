@@ -16,7 +16,7 @@ Connect to the redis command line client
 
 Connect to the redis desktop manager 
 
-## Customize "<usd_home>/environment-redis"
+## Customize "<usd_home>/redis/environment"
 
 REDIS_IMAGE=redis:3-alpine
 REDIS_FOLDER=/var/lib/redis

@@ -7,11 +7,11 @@ then
     cp -r "$USD_DIR/mysql/home" "$USD_HOME/mysql"
 fi
 
-setupEnvironment environment-mysql MYSQL_IMAGE mysql:5.7
-setupEnvironment environment-mysql MYSQL_FOLDER /var/lib/mysql
-setupEnvironment environment-mysql MYSQL_PORT 3306
-setupEnvironment environment-mysql MYSQL_ROOT_PASSWORD password
-source "$USD_HOME/environment-mysql"
+setupEnvironment mysql/environment MYSQL_IMAGE mysql:5.7
+setupEnvironment mysql/environment MYSQL_FOLDER /var/lib/mysql
+setupEnvironment mysql/environment MYSQL_PORT 3306
+setupEnvironment mysql/environment MYSQL_ROOT_PASSWORD password
+source "$USD_HOME/mysql/environment"
 
 
 docker run \

@@ -12,7 +12,7 @@ Stop the mongodb service
 
 Start the mongodb client
 
-## Customize "<usd_home>/environment-mongodb"
+## Customize "<usd_home>/mongodb/environment"
 
 MONGODB_IMAGE=mongo:3
 MONGODB_PORT=27017
