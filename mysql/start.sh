@@ -10,6 +10,7 @@ fi
 setupEnvironment environment-mysql MYSQL_IMAGE mysql:5.7
 setupEnvironment environment-mysql MYSQL_FOLDER /var/lib/mysql
 setupEnvironment environment-mysql MYSQL_PORT 3306
+setupEnvironment environment-mysql MYSQL_ROOT_PASSWORD password
 source "$USD_HOME/environment-mysql"
 
 
@@ -19,7 +20,7 @@ docker run \
     -v /tmp:/tmp \
     -v "$USD_HOME/mysql/conf.d":/etc/mysql/conf.d \
     -v "$USD_HOME/mysql/home":/root \
-    -e MYSQL_ROOT_PASSWORD="$DEFAULT_PASSWORD" \
+    -e MYSQL_ROOT_PASSWORD="${MYSQL_ROOT_PASSWORD}" \
     -p ${MYSQL_PORT}:3306 \
     -e TZ=${TZ} \
     -d ${MYSQL_IMAGE}

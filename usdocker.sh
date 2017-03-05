@@ -17,7 +17,6 @@ then
 fi
 
 setupEnvironment environment TZ `getLocalTimeZone`
-setupEnvironment environment DEFAULT_PASSWORD password
 setupEnvironment environment CONTAINER_NAME_SUFFIX -container
 source "$USD_HOME/environment"
 
