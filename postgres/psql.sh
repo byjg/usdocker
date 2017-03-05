@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker exec -it postgres-container psql "$@"
+docker exec -it postgres${CONTAINER_NAME_SUFFIX} psql "$@"
 

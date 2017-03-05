@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -it redis-container redis-cli
+docker exec -it redis${CONTAINER_NAME_SUFFIX} redis-cli

@@ -10,13 +10,13 @@ setupEnvironment environment-wordpress WORDPRESS_IMAGE wordpress
 #setupEnvironment environment-wordpress WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
 #setupEnvironment environment-wordpress WORDPRESS_THEME_FOLDER /var/lib/wordpress
 setupEnvironment environment-wordpress WORDPRESS_PORT 8080
-setupEnvironment environment-wordpress WORDPRESS_DB_HOST mysql-container:3306
+setupEnvironment environment-wordpress WORDPRESS_DB_HOST mysql${CONTAINER_NAME_SUFFIX}:3306
 setupEnvironment environment-wordpress WORDPRESS_DB_USER root
 setupEnvironment environment-wordpress WORDPRESS_DB_PASSWORD password
 source "$USD_HOME/environment-wordpress"
 
 docker run  \
-    --name wordpress-container `linkContainer` \
+    --name wordpress${CONTAINER_NAME_SUFFIX} `linkContainer` \
     -e WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST} \
     -e WORDPRESS_DB_USER=${WORDPRESS_DB_USER} \
     -e WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD} \

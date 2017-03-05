@@ -7,7 +7,7 @@ setupEnvironment environment-memcached MEMCACHED_MEMORY 1
 source "$USD_HOME/environment-memcached"
 
 docker run \
-    --name memcached-container \
+    --name memcached${CONTAINER_NAME_SUFFIX} \
     -p ${MEMCACHED_PORT}:11211 \
     -v "${MEMCACHED_FOLDER}":/data \
     -d ${MEMCACHED_IMAGE} \

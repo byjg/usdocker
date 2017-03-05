@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker stop mysql-container
-docker rm mysql-container
+docker stop mysql${CONTAINER_NAME_SUFFIX}
+docker rm mysql${CONTAINER_NAME_SUFFIX}
 

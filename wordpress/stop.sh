@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-docker stop wordpress-container
-docker rm wordpress-container
+docker stop wordpress${CONTAINER_NAME_SUFFIX}
+docker rm wordpress${CONTAINER_NAME_SUFFIX}
 

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop mongodb-container
-docker rm mongodb-container
+docker stop mongodb${CONTAINER_NAME_SUFFIX}
+docker rm mongodb${CONTAINER_NAME_SUFFIX}

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop postgres-container
-docker rm postgres-container
+docker stop postgres${CONTAINER_NAME_SUFFIX}
+docker rm postgres${CONTAINER_NAME_SUFFIX}

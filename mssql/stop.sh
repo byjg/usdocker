@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop mssql-container
-docker rm mssql-container
+docker stop mssql${CONTAINER_NAME_SUFFIX}
+docker rm mssql${CONTAINER_NAME_SUFFIX}

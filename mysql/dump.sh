@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker exec mysql-container /root/mysqldump.sh $1
+docker exec mysql${CONTAINER_NAME_SUFFIX} /root/mysqldump.sh $1
 

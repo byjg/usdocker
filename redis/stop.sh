@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop redis-container
-docker rm redis-container
+docker stop redis${CONTAINER_NAME_SUFFIX}
+docker rm redis${CONTAINER_NAME_SUFFIX}

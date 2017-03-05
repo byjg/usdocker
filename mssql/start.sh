@@ -6,7 +6,7 @@ setupEnvironment environment-mssql MSSQL_PORT 1433
 source "$USD_HOME/environment-mssql"
 
 docker run \
-    --name mssql-container \
+    --name mssql${CONTAINER_NAME_SUFFIX} \
     -e 'ACCEPT_EULA=Y' \
     -e 'SA_PASSWORD=Pa$$word!' \
     -p ${MSSQL_PORT}:1433 \

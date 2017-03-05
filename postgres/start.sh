@@ -7,7 +7,7 @@ setupEnvironment environment-postgres POSTGRES_PORT 5432
 source "$USD_HOME/environment-postgres"
 
 docker run \
-    --name postgres-container \
+    --name postgres${CONTAINER_NAME_SUFFIX} \
     -v ${POSTGRES_FOLDER}:/var/lib/postgresql/data \
     -v /tmp:/tmp \
     -e POSTGRES_USER=${POSTGRES_USER} \

@@ -14,7 +14,7 @@ source "$USD_HOME/environment-mysql"
 
 
 docker run \
-    --name mysql-container \
+    --name mysql${CONTAINER_NAME_SUFFIX} \
     -v ${MYSQL_FOLDER}:/var/lib/mysql \
     -v /tmp:/tmp \
     -v "$USD_HOME/mysql/conf.d":/etc/mysql/conf.d \

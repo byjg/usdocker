@@ -6,7 +6,7 @@ setupEnvironment environment-mongodb MONGODB_FOLDER /var/lib/mongodb
 source "$USD_HOME/environment-mongodb"
 
 docker run \
-    --name mongodb-container \
+    --name mongodb${CONTAINER_NAME_SUFFIX} \
     -v ${MONGODB_FOLDER}:/data/db \
     -v /tmp:/tmp \
     -p ${MONGODB_PORT}:27017 \

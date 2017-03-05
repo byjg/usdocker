@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker stop memcached-container
-docker rm memcached-container
+docker stop memcached${CONTAINER_NAME_SUFFIX}
+docker rm memcached${CONTAINER_NAME_SUFFIX}
