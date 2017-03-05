@@ -37,7 +37,7 @@ getLocalTimeZone() {
 setupEnvironment() {
     FILE="$USD_HOME/$1"
 
-    mkdir -p `dirname $1`
+    mkdir -p `dirname $FILE`
     touch "$FILE"
 
     if ! grep -q "$2=" "$FILE"; then

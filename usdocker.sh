@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-echo
-echo "--------------------------------------------+"
-echo "| Useful Scripts for Docker ByJG - usdocker |"
-echo "+-------------------------------------------+"
-echo
-
 # Define REAL PATH
 USD_DIR="$(dirname "$(readlink -f "$0")")"
 source "$USD_DIR/usdocker.include.sh"

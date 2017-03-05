@@ -28,6 +28,13 @@ and use command:
 sudo ln -s /path/to/usdocker.sh /usr/local/bin/usdocker
 ```
 
+Add the autocomplete for debian systems
+
+```
+sudo cp /path/to/bash_completion_debian.sh /etc/bash_completion.d/usdocker
+```
+
+
 ### Installing docker, docker-compose and docker-machine
 
 You can install the docker, docker-compose and docker-machine by using:
