@@ -11,11 +11,11 @@ setupEnvironment environment-redis REDIS_FOLDER /var/lib/redis
 setupEnvironment environment-redis REDIS_PORT 6379
 source "$USD_HOME/environment-redis"
 
-echo docker run \
+docker run \
     --name redis${CONTAINER_NAME_SUFFIX} \
-    -v ${USD_HOME}/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf \
+    -v ${USD_HOME}/redis/conf/redis.conf:/etc/redis.conf \
     -p ${REDIS_PORT}:6379 \
     -v ${REDIS_FOLDER}:/data \
-    -d ${REDIS_IMAGE} \
     -e TZ=${TZ} \
-    redis-server /usr/local/etc/redis/redis.conf
+    -d ${REDIS_IMAGE} \
+    redis-server /etc/redis.conf
