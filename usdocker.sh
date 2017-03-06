@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
 
 # Define REAL PATH
-USD_DIR="$(dirname "$(readlink -f "$0")")"
+if [ -x "`which realpath`" ]
+then
+    USD_DIR=`realpath $0`
+    USD_DIR=`dirname $USD_DIR`
+else
+    USD_DIR="$(dirname "$(readlink -f "$0")")"
+fi
+
+if [ ! -f "$USD_DIR/usdocker.sh" ]
+then
+    echo "Cannot detect realpath :("
+    exit
+fi
+
 source "$USD_DIR/usdocker.include.sh"
 
 USD_HOME="${HOME}/.usdocker"
