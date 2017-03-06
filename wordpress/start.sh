@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dockerMachineWarning
+
 if [ ! -d "$USD_HOME/wordpress" ]
 then
     mkdir -p "$USD_HOME/wordpress"

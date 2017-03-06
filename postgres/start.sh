@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dockerMachineWarning
+
 setupEnvironment postgres/environment POSTGRES_IMAGE postgres:9-alpine
 setupEnvironment postgres/environment POSTGRES_FOLDER ${USD_DATA}/postgresql
 setupEnvironment postgres/environment POSTGRES_USER postgres

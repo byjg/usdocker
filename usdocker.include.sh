@@ -69,3 +69,15 @@ checkIsRunning() {
         docker rm $1
     fi
 }
+
+dockerMachineWarning()
+{
+    if [ ! -z "$DOCKER_HOST" ]
+    then
+        echo "It seems docker-machine is active and direct to '$DOCKER_HOST'"
+        echo "It is important to note this script is not fully functional in a docker machine environment"
+        echo
+        echo "Press ENTER to continue or CTRL+C to abort"
+        echo
+    fi
+}

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dockerMachineWarning
+
 setupEnvironment memcached/environment MEMCACHED_IMAGE memcached:alpine
 setupEnvironment memcached/environment MEMCACHED_FOLDER ${USD_DATA}/memcached
 setupEnvironment memcached/environment MEMCACHED_PORT 11211

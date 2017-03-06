@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dockerMachineWarning
+
 if [ ! -d "$USD_HOME/mysql" ]
 then
     mkdir -p "$USD_HOME/mysql"

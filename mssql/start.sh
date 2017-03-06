@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+dockerMachineWarning
+
 setupEnvironment mssql/environment MSSQL_IMAGE microsoft/mssql-server-linux
 setupEnvironment mssql/environment MSSQL_FOLDER ${USD_DATA}/mssql
 setupEnvironment mssql/environment MSSQL_PORT 1433
