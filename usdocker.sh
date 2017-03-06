@@ -18,13 +18,16 @@ fi
 source "$USD_DIR/usdocker.include.sh"
 
 USD_HOME="${HOME}/.usdocker"
-if [ ! -d "$USD_HOME" ]
-then
-    mkdir -p "$USD_HOME"
-fi
+mkdir -p "$USD_HOME"
+
+USD_DATA="${HOME}/.usdocker_data"
+mkdir -p "$USD_HOME"
+
 
 setupEnvironment environment TZ `getLocalTimeZone`
 setupEnvironment environment CONTAINER_NAME_SUFFIX -container
+setupEnvironment environment LOCAL_HOME /home/
+setupEnvironment environment REMOTE_HOST_SHARE /hosthome/
 source "$USD_HOME/environment"
 
 if [ -z $1 ]

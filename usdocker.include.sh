@@ -44,3 +44,16 @@ setupEnvironment() {
         echo "$2=$3" >> "$FILE"
     fi
 }
+
+adjustLocalDirectories() {
+    if [ -z "$DOCKER_MACHINE_NAME" ]
+    then
+        return
+    fi
+
+    ORIGINAL="$1"
+    SEARCH="$LOCAL_HOME"
+    REPLACE="$REMOTE_HOST_SHARE"
+
+    echo "${ORIGINAL/$SEARCH/$REPLACE}:$2"
+}
