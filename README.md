@@ -62,3 +62,10 @@ Today we are the following Useful Scripts:
 
 Did not found the service you want? Feel free to create it and send to us again!
 
+## *Important Note*
+
+USDocker was implemented to run on the same machine where the docker daemon is running. 
+
+I am running into a situation where I got permission denied when the service try to write on the shared volume. 
+The issue #1 is opened and suggestion are welcome. 
+
