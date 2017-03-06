@@ -18,9 +18,11 @@ Connect to the redis desktop manager
 
 ## Customize "<usd_home>/redis/environment"
 
+```
 REDIS_IMAGE=redis:3-alpine
 REDIS_FOLDER=/var/lib/redis
 REDIS_PORT=6379
+```
 
 ## Customize the "<usd_home>/redis/conf/redis.conf"
 

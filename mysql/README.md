@@ -23,10 +23,12 @@ Dump the database and save it to the /tmp/dump folder.
 
 ## Customize "<usd_home>/mysql/environment"
 
+```
 MYSQL_IMAGE=mysql:5.7
 MYSQL_FOLDER=/var/lib/mysql
 MYSQL_PORT=3306
 MYSQL_ROOT_PASSWORD=password
+```
 
 ## Customize the "<usd_home>/mysql/conf.d/custom.cnf"
 

@@ -8,6 +8,7 @@ Start the wordpress service
 
 ## Customize "<usd_home>/wordpress/environment"
 
+```
 WORDPRESS_IMAGE=wordpress
 #WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
 #wordpressWORDPRESS_THEME_FOLDER /var/lib/wordpress
@@ -15,6 +16,7 @@ WORDPRESS_PORT=8080
 WORDPRESS_DB_HOST=mysql${CONTAINER_NAME_SUFFIX}:3306
 WORDPRESS_DB_USER=root
 WORDPRESS_DB_PASSWORD=password
+```
 
 ## Customize the "<usd_home>/wordpress/conf/uploads.ini"
 

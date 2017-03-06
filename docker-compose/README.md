@@ -30,6 +30,7 @@ Each file must have the name `docker-compose-ENVIRONMENT.yml`
 Example:
 
 docker-compose.yml
+
 ```
 version: '2'
 services:
@@ -52,6 +53,7 @@ services:
 ```
 
 docker-compose-dev.yml
+
 ```
 version: '2'
 services:
@@ -63,6 +65,7 @@ services:
 ```
 
 docker-compose-live.yml
+
 ```
 version: '2'
 services:
