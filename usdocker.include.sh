@@ -48,6 +48,7 @@ setupEnvironment() {
 adjustLocalDirectories() {
     if [ -z "$DOCKER_MACHINE_NAME" ]
     then
+        echo "$1:$2"
         return
     fi
 
@@ -56,4 +57,15 @@ adjustLocalDirectories() {
     REPLACE="$REMOTE_HOST_SHARE"
 
     echo "${ORIGINAL/$SEARCH/$REPLACE}:$2"
+}
+
+checkIsRunning() {
+    sleep 2
+    RESULT=`docker ps  | grep -c $1`
+
+    if [ "$RESULT" == "0" ]
+    then
+        docker logs $1
+        docker rm $1
+    fi
 }

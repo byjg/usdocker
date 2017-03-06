@@ -6,8 +6,8 @@ docker run  -it --rm \
     -e DISPLAY \
     --device /dev/dri \
     -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
-    -v $HOME/.rdm:/root/.rdm \
-    --name redis-desktop-manager \
+    -v `adjustLocalDirectories $HOME/.rdm /root/.rdm` \
+    --name redis-desktop-manager `linkContainer` \
     benoitg/redis-desktop-manager
 xhost -SI:localuser:root
 

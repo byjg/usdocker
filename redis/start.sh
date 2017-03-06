@@ -7,15 +7,17 @@ then
 fi
 
 setupEnvironment redis/environment REDIS_IMAGE redis:3-alpine
-setupEnvironment redis/environment REDIS_FOLDER /var/lib/redis
+setupEnvironment redis/environment REDIS_FOLDER ${USD_DATA}/redis
 setupEnvironment redis/environment REDIS_PORT 6379
 source "$USD_HOME/redis/environment"
 
 docker run \
     --name redis${CONTAINER_NAME_SUFFIX} \
-    -v ${USD_HOME}/redis/conf/redis.conf:/etc/redis.conf \
+    -v `adjustLocalDirectories "${USD_HOME}/redis/conf/redis.conf" "/etc/redis.conf"` \
     -p ${REDIS_PORT}:6379 \
-    -v ${REDIS_FOLDER}:/data \
+    -v `adjustLocalDirectories "${REDIS_FOLDER}" "/data"` \
     -e TZ=${TZ} \
     -d ${REDIS_IMAGE} \
     redis-server /etc/redis.conf
+
+checkIsRunning redis${CONTAINER_NAME_SUFFIX}
