@@ -30,7 +30,7 @@ setupEnvironment environment LOCAL_HOME /home/
 setupEnvironment environment REMOTE_HOST_SHARE /hosthome/
 source "$USD_HOME/environment"
 
-if [ -z $1 ]
+if [ -z "$1" ]
 then
     echo You need to pass the useful script service you want:
     echo
@@ -50,7 +50,7 @@ then
 fi
 shift
 
-if [ -z $1 ]
+if [ -z "$1" ]
 then
     echo Available usefull script:
     find "${USD_DIR}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
@@ -62,5 +62,14 @@ fi
 
 USD_SCRIPT="$1"
 shift
+
+if [ ! -z "$DOCKER_HOST" ]
+then
+    echo "It seems docker-machine is active and direct to '$DOCKER_HOST'"
+    echo "It is important to note this script is not fully functional in a docker machine environment"
+    echo
+    echo "Press ENTER to continue or CTRL+C to abort"
+    echo
+fi
 
 source "${USD_DIR}/${USD_SERVICE}/${USD_SCRIPT}.sh"
