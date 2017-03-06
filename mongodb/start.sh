@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setupEnvironment mongodb/environment MONGODB_IMAGE mongo:3
 setupEnvironment mongodb/environment MONGODB_PORT 27017

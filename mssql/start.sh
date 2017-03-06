@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setupEnvironment mssql/environment MSSQL_IMAGE microsoft/mssql-server-linux
 setupEnvironment mssql/environment MSSQL_FOLDER /var/lib/mssql

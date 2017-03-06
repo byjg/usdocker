@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 docker run -it --rm \
     -p 9001:9001 \

@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 
 echo
 echo Docker-Compose Up in a always fresh machine environment.

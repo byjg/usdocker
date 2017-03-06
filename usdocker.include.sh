@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 strindex() {
   x="${1%%$2*}"

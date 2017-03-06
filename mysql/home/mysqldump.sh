@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #USERNAME=" -u backup "   # see $HOME/.my.cnf
 

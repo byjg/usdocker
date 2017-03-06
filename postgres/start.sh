@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setupEnvironment postgres/environment POSTGRES_IMAGE postgres:9-alpine
 setupEnvironment postgres/environment POSTGRES_FOLDER /var/lib/postgresql/data

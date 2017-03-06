@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 xhost +SI:localuser:root
 docker run  -it --rm \

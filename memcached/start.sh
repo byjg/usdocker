@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 setupEnvironment memcached/environment MEMCACHED_IMAGE memcached:alpine
 setupEnvironment memcached/environment MEMCACHED_FOLDER /var/lib/memcached
