@@ -70,8 +70,7 @@ checkIsRunning() {
     fi
 }
 
-dockerMachineWarning()
-{
+dockerMachineWarning() {
     if [ ! -z "$DOCKER_HOST" ]
     then
         echo "It seems docker-machine is active and direct to '$DOCKER_HOST'"
@@ -80,4 +79,23 @@ dockerMachineWarning()
         echo "Press ENTER to continue or CTRL+C to abort"
         echo
     fi
+}
+
+dockerStatus() {
+    ST1=`docker ps | grep -c $1${CONTAINER_NAME_SUFFIX}`
+    ST2=`docker ps -a | grep -c $1${CONTAINER_NAME_SUFFIX}`
+
+    if [ "$ST1" == "1" ]
+    then
+        echo "$1 is up"
+        return
+    fi
+
+    if [ "$ST2" == "1" ]
+    then
+        echo "$1 is stopped"
+        return
+    fi
+
+    echo "$1 is down"
 }
