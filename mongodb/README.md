@@ -1,10 +1,10 @@
 # Useful script - Help for 'mongodb'
 
-## usdocker mongodb start
+## usdocker mongodb up
 
 Start the mongodo service
 
-## usdocker mongodb stop
+## usdocker mongodb down
 
 Stop the mongodb service
 

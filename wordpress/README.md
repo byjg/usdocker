@@ -1,10 +1,10 @@
 # Useful script - Help for 'wordpress'
 
-## usdocker wordpress start
+## usdocker wordpress up
 
 Start the wordpress service
 
-## usdocker wordpress stop
+## usdocker wordpress down
 
 ## Customize "<usd_home>/wordpress/environment"
 

@@ -1,10 +1,10 @@
 # Useful script - Help for 'mysql'
 
-## usdocker mysql start
+## usdocker mysql up
 
 Start the mysql service
 
-## usdocker mysql stop
+## usdocker mysql down
 
 Stop the mysql service
 

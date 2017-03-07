@@ -1,10 +1,10 @@
 # Useful script - Help for 'mssql'
 
-## usdocker mssql start
+## usdocker mssql up
 
 Start the mssql service
 
-## usdocker mssql stop
+## usdocker mssql down
 
 Stop the mssql service
 

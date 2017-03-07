@@ -1,6 +1,9 @@
 # USDocker - Useful Scripts for Docker
 
-This is a colletion of useful scripts for start, stop and use the most of common docker services. 
+This is a colletion of useful scripts to make easier brings a service up, down the service, check status
+and a lot of other features.
+ 
+Usdocker is highly customizable.
 
 ## Basic Usage
 
@@ -13,7 +16,7 @@ usdocker SERVICE COMMAND
 If you want start a mysql service you only need to:
 
 ```
-usdocker mysql start
+usdocker mysql up
 ```
 
 If you call `usdocker SERVICE` without the command you get the help for the service

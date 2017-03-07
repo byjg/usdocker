@@ -1,10 +1,10 @@
 # Useful script - Help for 'redis'
 
-## usdocker redis start
+## usdocker redis up
 
 Start the redis service
 
-## usdocker redis stop
+## usdocker redis down
 
 Stop the redis service
 

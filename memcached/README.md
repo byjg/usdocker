@@ -1,10 +1,10 @@
 # Useful script - Help for 'memcached'
 
-## usdocker memcached start
+## usdocker memcached up
 
 Start the memcached service
 
-## usdocker memcached stop
+## usdocker memcached down
 
 Stop the memcached service
 

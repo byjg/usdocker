@@ -1,10 +1,10 @@
 # Useful script - Help for 'postgres'
 
-## usdocker postgres start
+## usdocker postgres up
 
 Start the postgres service
 
-## usdocker postgres stop
+## usdocker postgres down
 
 Stop the postgres service
 
