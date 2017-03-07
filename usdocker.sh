@@ -15,7 +15,10 @@ then
     exit
 fi
 
-source "$USD_DIR/usdocker.include.sh"
+USD_INCLUDE="$USD_DIR/include"
+USD_SCRIPTS="$USD_DIR/scripts"
+
+source "$USD_INCLUDE/usdocker.include.sh"
 
 USD_HOME="${HOME}/.usdocker"
 mkdir -p "$USD_HOME"
@@ -35,14 +38,14 @@ then
     echo You need to pass the useful script service you want:
     echo
     echo Available:
-    find "${USD_DIR}/." -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort
+    find "${USD_SCRIPTS}/." -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort
     echo
     exit 1
 fi
 
 USD_SERVICE="$1"
 
-if [ ! -d "$USD_DIR/$USD_SERVICE" ]
+if [ ! -d "$USD_SCRIPTS/$USD_SERVICE" ]
 then
     echo "Useful Script Service '$USD_SERVICE' does not exists"
     echo
@@ -53,9 +56,9 @@ shift
 if [ -z "$1" ]
 then
     echo Available usefull script:
-    find "${USD_DIR}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
+    find "${USD_SCRIPTS}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
     echo
-    cat "${USD_DIR}/$USD_SERVICE/README.md"
+    cat "${USD_SCRIPTS}/$USD_SERVICE/README.md"
     echo
     exit 1
 fi
@@ -63,4 +66,4 @@ fi
 USD_SCRIPT="$1"
 shift
 
-source "${USD_DIR}/${USD_SERVICE}/${USD_SCRIPT}.sh"
+source "${USD_SCRIPTS}/${USD_SERVICE}/${USD_SCRIPT}.sh"
