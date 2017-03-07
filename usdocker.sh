@@ -17,6 +17,7 @@ fi
 
 USD_INCLUDE="$USD_DIR/include"
 USD_SCRIPTS="$USD_DIR/scripts"
+USD_DOCS="$USD_DIR/docs"
 
 source "$USD_INCLUDE/usdocker.include.sh"
 
@@ -58,7 +59,7 @@ then
     echo Available usefull script:
     find "${USD_SCRIPTS}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
     echo
-    cat "${USD_SCRIPTS}/$USD_SERVICE/README.md"
+    cat "${USD_DOCS}/$USD_SERVICE.md"
     echo
     exit 1
 fi
