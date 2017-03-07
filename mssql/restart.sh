@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-source "$USD_DIR/mssql/stop.sh"
-source "$USD_DIR/mssql/start.sh"
+source "$USD_DIR/mssql/down.sh"
+source "$USD_DIR/mssql/up.sh"

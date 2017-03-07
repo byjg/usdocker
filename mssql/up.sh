@@ -2,10 +2,7 @@
 
 dockerMachineWarning
 
-setupEnvironment mssql/environment MSSQL_IMAGE microsoft/mssql-server-linux
-setupEnvironment mssql/environment MSSQL_FOLDER ${USD_DATA}/mssql
-setupEnvironment mssql/environment MSSQL_PORT 1433
-source "$USD_HOME/mssql/environment"
+source "$USD_DIR/mssql/setup.sh"
 
 docker run \
     --name mssql${CONTAINER_NAME_SUFFIX} \

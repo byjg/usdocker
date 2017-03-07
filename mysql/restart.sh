@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-source "$USD_DIR/mysql/stop.sh"
-source "$USD_DIR/mysql/start.sh"
+source "$USD_DIR/mysql/down.sh"
+source "$USD_DIR/mysql/up.sh"

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-source "$USD_DIR/wordpress/stop.sh"
-source "$USD_DIR/wordpress/start.sh"
+source "$USD_DIR/wordpress/down.sh"
+source "$USD_DIR/wordpress/up.sh"
