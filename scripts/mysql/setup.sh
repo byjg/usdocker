@@ -3,8 +3,8 @@
 if [ ! -d "$USD_HOME/mysql" ]
 then
     mkdir -p "$USD_HOME/mysql"
-    cp -r "$USD_DIR/mysql/conf.d" "$USD_HOME/mysql"
-    cp -r "$USD_DIR/mysql/home" "$USD_HOME/mysql"
+    cp -r "$USD_SCRIPT/mysql/conf.d" "$USD_HOME/mysql"
+    cp -r "$USD_SCRIPT/mysql/home" "$USD_HOME/mysql"
 fi
 
 setupEnvironment mysql/environment MYSQL_IMAGE mysql:5.7
