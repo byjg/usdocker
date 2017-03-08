@@ -1,0 +1,29 @@
+version: '2'
+services:
+    phpfpm:
+        container_name: lemp-fpm-instance
+        build:
+            context: docker/fpm
+        image: lemp-fpm
+        network_mode: bridge
+        external_links:
+            - mysql-container
+#            - postgres-container
+        volumes:
+            - $HOME/usdocker-lemp:/srv/web
+        environment:
+            - LEMP_DATA_FOLDER=$HOME/usdocker-lemp
+
+    nginx:
+        container_name: lemp-nginx-instance
+        build:
+            context: docker/nginx
+        network_mode: bridge
+        image: lemp-nginx
+        links:
+            - phpfpm
+        volumes_from:
+            - phpfpm
+        ports:
+            - "80:80"
+            - "443:443"

@@ -65,6 +65,36 @@ Today we are the following Useful Scripts:
 
 Did not found the service you want? Feel free to create it and send to us again!
 
+## Most common Useful Scripts commands
+
+The most of Useful Scripts have the follow commands available:
+
+### start the service
+
+```
+usdocker SERVICE up
+```
+
+### stop and kill the service
+
+```
+usdocker SERVICE down
+```
+
+### setup local folders
+
+The follow command will create the folder id they not exists and remain unchanged if exists.
+
+```
+usdocker SERVICE setup
+```
+
+If you want to reset to default parameters just call:
+
+```
+usdocker SERVICE setup --reset
+```
+
 ## *Important Note*
 
 USDocker was implemented to run on the same machine where the docker daemon is running. 
