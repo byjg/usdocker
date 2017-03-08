@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Environment
-setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress
+setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress:4.7-php7.1
 #setupEnvironment wordpress/environment WORDPRESS_PLUGIN_FOLDER /var/lib/wordpress
 #setupEnvironment wordpress/environment WORDPRESS_THEME_FOLDER /var/lib/wordpress
 setupEnvironment wordpress/environment WORDPRESS_PORT 8080
