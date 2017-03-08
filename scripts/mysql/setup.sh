@@ -8,8 +8,14 @@ then
 fi
 
 setupEnvironment mysql/environment MYSQL_IMAGE mysql:5.7
-setupEnvironment mysql/environment MYSQL_FOLDER ${USD_DATA}/mysql
+setupEnvironment mysql/environment MYSQL_FOLDER \${USD_DATA}/mysql
 setupEnvironment mysql/environment MYSQL_PORT 3306
 setupEnvironment mysql/environment MYSQL_ROOT_PASSWORD password
 source "$USD_HOME/mysql/environment"
+
+resetQuestion $1
+resetEnvironment $1
+resetData $1 $MYSQL_FOLDER
+resetFinsih $1
+
 

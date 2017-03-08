@@ -99,3 +99,47 @@ dockerStatus() {
 
     echo "$1 is down"
 }
+
+resetQuestion() {
+    if [ "$1" == "--reset" ] || [ "$1" == "--reset-env" ] || [ "$1" == "--reset-data" ]
+    then
+        printf "Do you really reset "
+        if [ "$1" == "--reset" ]; then
+            printf "ALL USER DATA AND CONFIG"
+        fi
+
+        if [ "$1" == "--reset-env" ]; then
+            printf "ALL USER CONFIG"
+        fi
+
+        if [ "$1" == "--reset-data" ]; then
+            printf "ALL USER DATA"
+        fi
+
+        printf "?. Press ENTER to continue or CTRL+C to cancel"
+        read
+    fi
+
+}
+
+resetData() {
+    if [ "$1" == "--reset" ] || [ "$1" == "--reset-data" ]
+    then
+        rm -rf $2
+    fi
+}
+
+resetEnvironment() {
+    if [ "$1" == "--reset" ] || [ "$1" == "--reset-env" ]
+    then
+        rm -rf ${USD_HOME}/${USD_SERVICE}
+    fi
+}
+
+resetFinsih() {
+    if [ "$1" == "--reset" ] || [ "$1" == "--reset-env" ] || [ "$1" == "--reset-data" ]
+    then
+        echo Done.
+        exit
+    fi
+}

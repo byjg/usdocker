@@ -89,11 +89,26 @@ The follow command will create the folder id they not exists and remain unchange
 usdocker SERVICE setup
 ```
 
-If you want to reset to default parameters just call:
+If you want to reset to default parameters and user data just call:
 
 ```
 usdocker SERVICE setup --reset
 ```
+
+Reset only the user environment
+
+```
+usdocker SERVICE setup --reset-env
+```
+
+Reset only the user data (including database, etc)
+
+```
+usdocker SERVICE setup --reset-data
+```
+
+
+Note that this operation is irreversible. 
 
 ## *Important Note*
 
