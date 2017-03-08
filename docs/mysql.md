@@ -1,25 +1,34 @@
 # Useful script - Help for 'mysql'
 
-## usdocker mysql up
+## Start the mysql service
 
-Start the mysql service
+```
+usdocker mysql up
+```
 
-## usdocker mysql down
+## Stop the mysql service
 
-Stop the mysql service
+```
+usdocker mysql down
+```
 
-## usdocker mysql client
+## Run the mysql-client command line interface
 
-Run the mysql-client command line interface
+```
+usdocker mysql client
+```
 
-## usdocker mysql connect
+## Connect to the mysql bash interface
 
-Connect to the mysql bash interface
+```
+usdocker mysql connect
+```
 
-## usdocker mysql dump
+## Dump the database and save it to the /tmp/dump folder.
 
-Dump the database and save it to the /tmp/dump folder. 
-
+```
+usdocker mysql dump
+```
 
 ## Customize "<usd_home>/mysql/environment"
 

@@ -1,16 +1,22 @@
 # Useful script - Help for 'mongodb'
 
-## usdocker mongodb up
+## Start the mongodo service
 
-Start the mongodo service
+```
+usdocker mongodb up
+```
 
-## usdocker mongodb down
+## Stop the mongodb service 
 
-Stop the mongodb service
+```
+usdocker mongodb down
+```
 
-## usdocker mongodb client
+## Start the mongodb client
 
-Start the mongodb client
+```
+usdocker mongodb client
+```
 
 ## Customize "<usd_home>/mongodb/environment"
 

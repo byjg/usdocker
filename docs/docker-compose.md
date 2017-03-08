@@ -1,15 +1,17 @@
 # Useful script - Help for 'docker-compose'
 
-## usdocker docker-compose install
+## Install or update the latest docker-compse release into your machine
 
-Install or update the latest docker-compse release into your machine
+```
+usdocker docker-compose install
+```
 
-## usdocker docker-compose up
+## docker-compose replacement 
 
-This script is a replacement for "docker-compose up". This scripts will create a fresh clean container
+You have a Useful Script replacement for "docker-compose up". This scripts will create a fresh clean container
 every time. 
 
-You can handle easily different deploy environments by using customizable settings in docker-composer. 
+You can handle easily different deploy environments by using customizable settings in docker-composer.
 
 ### Basic usage
 

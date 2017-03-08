@@ -1,20 +1,28 @@
 # Useful script - Help for 'redis'
 
-## usdocker redis up
+## Start the redis service
 
-Start the redis service
+```
+usdocker redis up
+```
 
-## usdocker redis down
+## Stop the redis service
 
-Stop the redis service
+```
+usdocker redis down
+```
 
-## usdocker redis redis-cli
+## Connect to the redis command line client
 
-Connect to the redis command line client
+```
+usdocker redis redis-cli
+```
 
-## usdocker redis rdm
+## Connect to the redis desktop manager
 
-Connect to the redis desktop manager 
+```
+usdocker redis rdm
+```
 
 ## Customize "<usd_home>/redis/environment"
 

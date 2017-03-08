@@ -1,20 +1,28 @@
 # Useful script - Help for 'postgres'
 
-## usdocker postgres up
+## Start the postgres service
 
-Start the postgres service
+```
+usdocker postgres up
+```
 
-## usdocker postgres down
+## Stop the postgres service 
 
-Stop the postgres service
+```
+usdocker postgres down
+```
 
-## usdocker postgres connect
+## Connect to the postgres bash
 
-Connect to the postgres bash 
+```
+usdocker postgres connect
+```
 
-## usdocker postgres psql
+## Connect to the psql client
 
-Connect to the psql client 
+```
+usdocker postgres psql
+```
 
 ## Customize "<usd_home>/postgres/environment"
 

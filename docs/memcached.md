@@ -1,12 +1,16 @@
 # Useful script - Help for 'memcached'
 
-## usdocker memcached up
+## Start the memcached service
 
-Start the memcached service
+```
+usdocker memcached up
+```
 
-## usdocker memcached down
+## Stop the memcached service
 
-Stop the memcached service
+```
+usdocker memcached down
+```
 
 ## Customize "<usd_home>/memcached/environment"
 

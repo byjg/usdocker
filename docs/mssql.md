@@ -1,16 +1,22 @@
 # Useful script - Help for 'mssql'
 
-## usdocker mssql up
+## Start the mssql service
 
-Start the mssql service
+```
+usdocker mssql up
+```
 
-## usdocker mssql down
+## Stop the mssql service 
 
-Stop the mssql service
+```
+usdocker mssql down
+```
 
-## usdocker mssql connect
+## Connect to the mssql bash
 
-Connect to the mssql bash 
+```
+usdocker mssql connect
+```
 
 ## Customize "<usd_home>/mssql/environment"
 
