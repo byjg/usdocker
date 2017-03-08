@@ -64,7 +64,14 @@ then
     exit 1
 fi
 
-USD_SCRIPT="$1"
+USD_COMMAND="$1"
+
+if [ ! -f "$USD_SCRIPTS/$USD_SERVICE/$USD_COMMAND.sh" ]
+then
+    echo "Useful Script commans 'usdocker $USD_SERVICE $USD_COMMAND' does not exists"
+    echo
+    exit 1
+fi
 shift
 
-source "${USD_SCRIPTS}/${USD_SERVICE}/${USD_SCRIPT}.sh"
+source "${USD_SCRIPTS}/${USD_SERVICE}/${USD_COMMAND}.sh"

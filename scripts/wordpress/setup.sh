@@ -3,7 +3,7 @@
 if [ ! -d "$USD_HOME/wordpress" ]
 then
     mkdir -p "$USD_HOME/wordpress"
-    cp -r "$USD_SCRIPT/wordpress/conf" "$USD_HOME/wordpress"
+    cp -r "$USD_SCRIPTS/wordpress/conf" "$USD_HOME/wordpress"
 fi
 
 setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress
