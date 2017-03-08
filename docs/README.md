@@ -83,7 +83,8 @@ usdocker SERVICE down
 
 ### setup local folders
 
-The follow command will create the folder id they not exists and remain unchanged if exists.
+The follow command will create the folder with the the default service parameters if it does not exists 
+and remain the parameters unchanged if it exists.
 
 ```
 usdocker SERVICE setup
@@ -112,8 +113,8 @@ Note that this operation is irreversible.
 
 ## *Important Note*
 
-USDocker was implemented to run on the same machine where the docker daemon is running. 
+*USDocker was implemented to run on the same machine where the docker daemon is running.* 
 
+Docker Machine environment (remote hosts) need to share the local folder with the remote host.
 I am running into a situation where I got permission denied when the service try to write on the shared volume. 
 The issue #1 is opened and suggestion are welcome. 
-
