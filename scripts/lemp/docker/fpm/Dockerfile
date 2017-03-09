@@ -1,5 +1,7 @@
 FROM byjg/php7-fpm:alpine
 
+ARG TZ
+
 VOLUME /srv/web
 WORKDIR /srv/web
 

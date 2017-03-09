@@ -1,8 +1,10 @@
 version: '2'
 services:
     phpfpm:
-        container_name: lemp-fpm-instance
+        container_name: lemp-fpm$CONTAINER_NAME_SUFFIX
         build:
+            args:
+                - TZ=$TZ
             context: docker/fpm
         image: lemp-fpm
         network_mode: bridge
@@ -10,13 +12,17 @@ services:
             - mysql-container
 #            - postgres-container
         volumes:
-            - $HOME/usdocker-lemp:/srv/web
+            - $LEMP_DATA_FOLDER:/srv/web
         environment:
-            - LEMP_DATA_FOLDER=$HOME/usdocker-lemp
+            - LEMP_DATA_FOLDER=$LEMP_DATA_FOLDER
+            - LEMP_PORT=$LEMP_PORT
+            - LEMP_SSL_PORT=$LEMP_SSL_PORT
 
     nginx:
-        container_name: lemp-nginx-instance
+        container_name: lemp-nginx$CONTAINER_NAME_SUFFIX
         build:
+            args:
+                - TZ=$TZ
             context: docker/nginx
         network_mode: bridge
         image: lemp-nginx
@@ -25,5 +31,9 @@ services:
         volumes_from:
             - phpfpm
         ports:
-            - "80:80"
-            - "443:443"
+            - "$LEMP_PORT:80"
+            - "$LEMP_SSL_PORT:443"
+        environment:
+            - LEMP_DATA_FOLDER=$LEMP_DATA_FOLDER
+            - LEMP_PORT=$LEMP_PORT
+            - LEMP_SSL_PORT=$LEMP_SSL_PORT
