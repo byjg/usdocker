@@ -1,10 +1,10 @@
-FROM nginx:1.11
+FROM byjg/nginx-extras:1.10
 
 ARG TZ
 
-RUN rm /etc/nginx/conf.d/*
+RUN rm /etc/nginx/sites-enabled/*
 
-COPY conf.d /etc/nginx/conf.d
+COPY conf.d /etc/nginx/sites-enabled
 
 ENV TZ=$TZ
 
