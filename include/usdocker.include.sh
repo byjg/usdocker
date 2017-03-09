@@ -103,6 +103,13 @@ dockerStatus() {
 resetQuestion() {
     if [ "$1" == "--reset" ] || [ "$1" == "--reset-env" ] || [ "$1" == "--reset-data" ]
     then
+
+        if [ "$USD_SERVICE is down" != "`dockerStatus $USD_SERVICE`" ]
+        then
+            echo "You cannot reset while the service is running"
+            exit 1
+        fi
+
         printf "Do you really reset "
         if [ "$1" == "--reset" ]; then
             printf "ALL USER DATA AND CONFIG"

@@ -9,6 +9,9 @@ docker run  \
     -e WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST} \
     -e WORDPRESS_DB_USER=${WORDPRESS_DB_USER} \
     -e WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD} \
+    -v `adjustLocalDirectories "$WORDPRESS_PLUGIN_FOLDER" /var/www/html/wp-content/plugins` \
+    -v `adjustLocalDirectories "$WORDPRESS_THEME_FOLDER" /var/www/html/wp-content/themes` \
+    -v `adjustLocalDirectories "$WORDPRESS_UPLOAD_FOLDER" /var/www/html/wp-content/uploads` \
     -v `adjustLocalDirectories "${USD_HOME}/wordpress/conf/uploads.ini" /usr/local/etc/php/conf.d/uploads.ini` \
     -p ${WORDPRESS_PORT}:80 \
     -e TZ=${TZ} \
