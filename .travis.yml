@@ -3,12 +3,12 @@ language: php
 php:
   - '7.1'
 
-script: install/.createinstall.sh /tmp/usdocker_install.sh
+script: install/.createinstall.sh $TRAVIS_BUILD_DIR/usdocker_install.sh
 
 deploy:
   provider: releases
-  api_key: $GITHUB_TOKEN
-  file: "/tmp/usdocker_install.sh"
+  api_key: "$GITHUB_TOKEN"
+  file: "$TRAVIS_BUILD_DIR/usdocker_install.sh"
   skip_cleanup: true
   on:
     tags: true
