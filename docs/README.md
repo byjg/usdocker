@@ -21,24 +21,23 @@ usdocker mysql up
 
 If you call `usdocker SERVICE` without the command you get the help for the service
 
-## Installing
+## Installing usdocker
 
-First on all you need to download the most recent release at [https://github.com/byjg/usdocker/releases]([https://github.com/byjg/usdocker/releases)
-
-and use command:
+### Using the setup script
 
 ```
-sudo ln -s /path/to/usdocker.sh /usr/local/bin/usdocker
+wget -O /tmp/v090 http://v090.usdocker.com && sudo bash /tmp/v090 && rm /tmp/v090
 ```
 
-Add the autocomplete for debian systems
+### Install from Git
 
 ```
-sudo cp /path/to/bash_completion_debian.sh /etc/bash_completion.d/usdocker
+sudo rm -rf /opt/usdocker
+sudo git clone https://github.com/byjg/usdocker.git /opt/usdocker
+sudo /opt/usdocker/install/install.sh
 ```
 
-
-### Installing docker, docker-compose and docker-machine
+## Installing docker, docker-compose and docker-machine
 
 You can install the docker, docker-compose and docker-machine by using:
 
