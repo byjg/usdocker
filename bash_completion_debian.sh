@@ -16,7 +16,10 @@ _usdocker()
       _script_commands="`usdocker .autocomplete get $prev` env"
 
   elif [ "$prev" == "setup" ]; then
-      _script_commands="--reset --reset-env --reset-data"
+      _script_commands="--reset --reset-env --reset-data --set"
+
+  elif [ "$prev" == "--set" ]; then
+      _script_commands="$(usdocker .autocomplete __set $service)"
 
   elif [ "$service" == "docker-compose" ] && [ "$prev" == "up" ]; then
       _script_commands="`ls ~/.docker/machine/machines/` local"

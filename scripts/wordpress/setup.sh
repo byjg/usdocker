@@ -19,6 +19,9 @@ resetData $1 $WORDPRESS_THEME_FOLDER
 resetData $1 $WORDPRESS_UPLOAD_FOLDER
 resetFinsih $1
 
+# Set Key and Value
+setKeyValue $1 $2 $3
+
 # Data
 if [ ! -d "$USD_HOME/wordpress/conf" ]
 then

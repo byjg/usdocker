@@ -11,4 +11,7 @@ resetEnvironment $1
 #resetData $1 $PHP_FOLDER
 resetFinsih $1
 
+# Set Key and Value
+setKeyValue $1 $2 $3
+
 # Data

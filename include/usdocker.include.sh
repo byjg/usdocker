@@ -151,6 +151,20 @@ resetFinsih() {
     fi
 }
 
+setKeyValue() {
+    if [ "$1" == "--set" ]
+    then
+        if [ -z "$2" ] || [ -z "$3" ]
+        then
+            echo "You need pass the KEY and VALUE to be setup"
+        fi
+        KEY=$2
+        VALUE=$3
+        sed -i'' -e "s/^$KEY=.*$/$KEY=$VALUE/g" "${USD_HOME}/${USD_SERVICE}/environment"
+        exit
+    fi
+}
+
 printGlobalEnvironment() {
     echo USD_INCLUDE="$USD_INCLUDE"
     echo USD_SCRIPTS="$USD_SCRIPTS"
