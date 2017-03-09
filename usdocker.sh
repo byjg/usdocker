@@ -44,6 +44,12 @@ then
     exit 1
 fi
 
+if [ "$1" == "env" ]
+then
+    printGlobalEnvironment
+    exit
+fi
+
 USD_SERVICE="$1"
 
 if [ ! -d "$USD_SCRIPTS/$USD_SERVICE" ]
@@ -62,6 +68,12 @@ then
     cat "${USD_DOCS}/$USD_SERVICE.md"
     echo
     exit 1
+fi
+
+if [ "$1" == "env" ]
+then
+    printServiceEnvironment
+    exit
 fi
 
 USD_COMMAND="$1"

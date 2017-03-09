@@ -150,3 +150,17 @@ resetFinsih() {
         exit
     fi
 }
+
+printGlobalEnvironment() {
+    echo USD_INCLUDE="$USD_INCLUDE"
+    echo USD_SCRIPTS="$USD_SCRIPTS"
+    echo USD_DOCS="$USD_DOCS"
+    echo USD_HOME="$USD_HOME"
+    echo USD_DATA="$USD_DATA"
+    cat "$USD_HOME/environment"
+}
+
+printServiceEnvironment() {
+    printGlobalEnvironment
+    cat "$USD_HOME/$USD_SERVICE/environment"
+}
