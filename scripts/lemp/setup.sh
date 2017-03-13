@@ -21,7 +21,7 @@ then
     cp -r "$USD_SCRIPTS/lemp/data" "$LEMP_DATA_FOLDER"
 fi
 
-if [ ! -d "$USD_HOME/lemp/docker-compose.yml" ]
+if [ ! -f "$USD_HOME/lemp/docker-compose.yml" ]
 then
     cp -r $USD_SCRIPTS/lemp/docker* "$USD_HOME/lemp/"
 fi

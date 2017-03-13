@@ -18,7 +18,10 @@ ln -sf "`dirname $BASEDIR`/usdocker.sh" /usr/local/bin/usdocker
 
 eval $(cat /etc/*-release)
 
-if [ "$ID_LIKE" == "debian" ]; then
+if [ "$ID_LIKE" == "debian" ] || [ "$ID" == "debian" ]; then
+    echo "Setting auto-complete..."
+    ln -sf "`dirname $BASEDIR`/bash_completion_debian.sh" /etc/bash_completion.d/usdocker
+elif [ "$ID_LIKE" == "rhel fedora" ] || [ "$ID" == "fedora" ]; then
     echo "Setting auto-complete..."
     ln -sf "`dirname $BASEDIR`/bash_completion_debian.sh" /etc/bash_completion.d/usdocker
 fi
