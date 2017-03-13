@@ -5,6 +5,7 @@ setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress:4.7-php7.1
 setupEnvironment wordpress/environment WORDPRESS_PLUGIN_FOLDER \${USD_DATA}/wordpress/plugins
 setupEnvironment wordpress/environment WORDPRESS_THEME_FOLDER \${USD_DATA}/wordpress/themes
 setupEnvironment wordpress/environment WORDPRESS_UPLOAD_FOLDER \${USD_DATA}/wordpress/uploads
+setupEnvironment wordpress/environment WORDPRESS_LANGUAGES_FOLDER \${USD_DATA}/wordpress/languages
 setupEnvironment wordpress/environment WORDPRESS_PORT 8080
 setupEnvironment wordpress/environment WORDPRESS_DB_HOST mysql\${CONTAINER_NAME_SUFFIX}:3306
 setupEnvironment wordpress/environment WORDPRESS_DB_USER root
@@ -17,6 +18,7 @@ resetEnvironment $1
 resetData $1 $WORDPRESS_PLUGIN_FOLDER
 resetData $1 $WORDPRESS_THEME_FOLDER
 resetData $1 $WORDPRESS_UPLOAD_FOLDER
+resetData $1 $WORDPRESS_LANGUAGES_FOLDER
 resetFinsih $1
 
 # Set Key and Value
@@ -41,4 +43,9 @@ then
     echo "----------------------------------------------"
     echo
     sudo chown 33:33 "$WORDPRESS_UPLOAD_FOLDER"
+fi
+
+if [ ! -d "$WORDPRESS_LANGUAGES_FOLDER" ]
+then
+    mkdir -p "$WORDPRESS_LANGUAGES_FOLDER"
 fi
