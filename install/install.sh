@@ -16,7 +16,7 @@ fi
 echo "Creating symbolic link..."
 ln -sf "`dirname $BASEDIR`/usdocker.sh" /usr/local/bin/usdocker
 
-eval $(cat /etc/*-release)
+eval $(cat /etc/*-release | grep =)
 
 if [ "$ID_LIKE" == "debian" ] || [ "$ID" == "debian" ]; then
     echo "Setting auto-complete..."
