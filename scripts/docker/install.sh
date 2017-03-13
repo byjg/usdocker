@@ -8,5 +8,5 @@ fi
 wget -qO- https://get.docker.com/ | sh
 
 groupadd docker
-gpasswd -a ${USER} docker
+gpasswd -a $(who -m | awk '{print $1;}') docker
 service docker restart
