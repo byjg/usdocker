@@ -83,3 +83,14 @@ And then you can run
 ```
 usdocker docker-compose up local dev "image1 image2 image3"
 ```
+
+## docker-compose create-project
+
+Create a docker-compose project based on templates
+
+```
+usdocker docker-compose create-project PROJECT-NAME TEMPLATE DESTINATION-FOLDER
+```
+
+Available templates
+- lemp

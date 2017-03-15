@@ -26,7 +26,7 @@ If you call `usdocker SERVICE` without the command you get the help for the serv
 ### Using the setup script
 
 ```
-wget -O /tmp/v090 http://v090.usdocker.com && sudo bash /tmp/v090 && rm /tmp/v090
+wget -O /tmp/latest http://latest.usdocker.com && sudo bash /tmp/latest && rm /tmp/latest
 ```
 
 ### Install from Git

@@ -1,0 +1,19 @@
+version: '2'
+services:
+    phpfpm:
+        build:
+            context: .
+            dockerfile: Dockerfile-dev
+
+#        external_links:
+#            - mysql-container
+#            - postgres-container
+#            - redis-container
+#            - mongodb-container
+#            - mssql-container
+
+        environment:
+            - MACHINE_ENV=dev
+
+        volumes:
+            - .:/srv/web

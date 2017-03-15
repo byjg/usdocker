@@ -1,0 +1,13 @@
+version: '2'
+services:
+    phpfpm:
+#        extra_hosts:
+#            mysql-container: x.x.x.x
+#            mysql-container: x.x.x.x
+#            postgres-container: x.x.x.x
+#            redis-container: x.x.x.x
+#            mongodb-container: x.x.x.x
+#            mssql-container: x.x.x.x
+
+        environment:
+            - MACHINE_ENV=live

@@ -1,0 +1,24 @@
+version: '2'
+services:
+    phpfpm:
+        container_name: @PROJECT@-phpfpm-instance
+        build:
+            context: .
+        image: @PROJECT@-phpfpm
+        network_mode: bridge
+        volumes:
+            - /srv/web
+
+    nginx:
+        container_name: @PROJECT@-nginx-instance
+        build:
+            context: docker/nginx
+        network_mode: bridge
+        image: @PROJECT@-nginx
+        links:
+            - phpfpm
+        volumes_from:
+            - phpfpm
+        ports:
+            - "80:80"
+            - "443:443"
