@@ -6,6 +6,8 @@
 usdocker docker install
 ```
 
+## Upgrade all docker images to their latest versions
 
-
-
+```
+usdocker docker upgrade-all
+```
