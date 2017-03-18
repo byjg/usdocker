@@ -11,3 +11,11 @@ usdocker docker install
 ```
 usdocker docker upgrade-all
 ```
+
+## Prune all unused containers, volumes and images
+
+```
+usdocker docker garbage-collect
+```
+
+Use it at own risk!
