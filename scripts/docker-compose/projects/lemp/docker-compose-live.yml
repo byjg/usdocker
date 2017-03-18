@@ -10,4 +10,4 @@ services:
 #            mssql-container: x.x.x.x
 
         environment:
-            - MACHINE_ENV=live
+            - APPLICATION_ENV=live

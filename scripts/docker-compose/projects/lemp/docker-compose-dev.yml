@@ -13,7 +13,7 @@ services:
 #            - mssql-container
 
         environment:
-            - MACHINE_ENV=dev
+            - APPLICATION_ENV=dev
 
         volumes:
             - .:/srv/web

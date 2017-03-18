@@ -63,7 +63,7 @@ services:
         external_links:
             - mysql-container
         environment:
-            - MACHINE_ENV=dev
+            - APPLICATION_ENV=dev
 ```
 
 docker-compose-live.yml
@@ -75,7 +75,7 @@ services:
         extra_hosts:
             mysql-container: 10.11.12.13
         environment:
-            - MACHINE_ENV=live
+            - APPLICATION_ENV=live
 ```
 
 And then you can run
