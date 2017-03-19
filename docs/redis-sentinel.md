@@ -9,7 +9,7 @@ usdocker redis-sentinel up
 ## Stop the redis-sentinel service 
 
 ```
-usdocker redis-sentinel down -teste
+usdocker redis-sentinel down
 ```
 
 ## Connect to the redis-sentinel bash
