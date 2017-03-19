@@ -53,6 +53,8 @@ Today we are the following Useful Scripts:
 - [docker](docker)
 - [docker-compose](docker-compose)
 - [docker-machine](docker-machine)
+- [elasticsearch](elasticsearch)
+- [kibana](kibana)
 - [memcached](memcached)
 - [mongodb](mongodb)
 - [mssql](mssql)
@@ -60,6 +62,7 @@ Today we are the following Useful Scripts:
 - [php](php)
 - [postgres](postgres)
 - [redis](redis)
+- [redis-sentinel](redis-sentinel)
 - [wordpress](wordpress)
 
 Did not found the service you want? Feel free to create it and send to us again!
