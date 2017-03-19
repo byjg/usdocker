@@ -1,0 +1,8 @@
+# Custom ElasticSearch (see documentation)
+
+# X-Pack is preinstalled in this image and is enabled.
+# X-Pack includes a trial license for 30 days.
+# If you have a X-Pach license, comment the line below
+#
+# https://www.elastic.co/guide/en/x-pack/current/security-getting-started.html
+xpack.security.enabled: false
