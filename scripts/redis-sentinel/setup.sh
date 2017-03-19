@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
 # Environment
-setupEnvironment redis-sentinel/environment REDIS-SENTINEL_IMAGE miko2u/redis-sentinel
-setupEnvironment redis-sentinel/environment REDIS-SENTINEL_FOLDER \${USD_DATA}/redis-sentinel
-setupEnvironment redis-sentinel/environment REDIS-SENTINEL_PORT 26379
+setupEnvironment redis-sentinel/environment REDIS_SENTINEL_IMAGE miko2u/redis-sentinel
+setupEnvironment redis-sentinel/environment REDIS_SENTINEL_FOLDER \${USD_DATA}/redis-sentinel
+setupEnvironment redis-sentinel/environment REDIS_SENTINEL_PORT 26379
 source "$USD_HOME/redis-sentinel/environment"
 
 # Reset Question
 resetQuestion $1
 resetEnvironment $1
-resetData $1 $REDIS-SENTINEL_FOLDER
+resetData $1 $REDIS_SENTINEL_FOLDER
 resetFinsih $1
 
 # Set Key and Value
