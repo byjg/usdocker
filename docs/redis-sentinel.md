@@ -22,6 +22,6 @@ usdocker redis-sentinel connect
 
 ```
 REDIS-SENTINEL_IMAGE=miko2u/redis-sentinel
-REDIS_PORT=26379
+REDIS-SENTINEL_PORT=26379
 REDIS-SENTINEL_FOLDES=/var/lib/redis-sentinel
 ```
