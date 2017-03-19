@@ -1,0 +1,16 @@
+# Custom ElasticSearch (see documentation)
+
+# Default Kibana configuration from kibana-docker.
+server.name: kibana
+server.host: "0"
+elasticsearch.url: http://elasticsearch-container:9200
+#elasticsearch.username: elastic
+#elasticsearch.password: changeme
+xpack.monitoring.ui.container.elasticsearch.enabled: true
+
+# X-Pack is preinstalled in this image and is enabled.
+# X-Pack includes a trial license for 30 days.
+# If you have a X-Pach license, comment the line below
+#
+# https://www.elastic.co/guide/en/x-pack/current/security-getting-started.html
+xpack.security.enabled: false
