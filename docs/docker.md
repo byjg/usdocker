@@ -19,3 +19,15 @@ usdocker docker garbage-collect
 ```
 
 Use it at own risk!
+
+## Check the status off all services
+
+```
+usdocker docker status-all
+```
+
+## Stop all services
+
+```
+usdocker docker down-all
+```
