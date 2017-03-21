@@ -14,7 +14,8 @@ docker run \
     -p "${ELASTICSEARCH_PORT}:9200" \
     -v `adjustLocalDirectories "${ELASTICSEARCH_FOLDER}/data" "/usr/share/elasticsearch/data"` \
     -v `adjustLocalDirectories "$USD_HOME/elasticsearch/conf/custom.yml" /usr/share/elasticsearch/config/elasticsearch.yml` \
-    -e TZ=${TZ} \
     -d ${ELASTICSEARCH_IMAGE}
 
 checkIsRunning elasticsearch${CONTAINER_NAME_SUFFIX}
+
+#    -e TZ=${TZ} \
