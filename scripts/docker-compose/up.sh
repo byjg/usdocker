@@ -56,6 +56,14 @@ then
 else
     echo "Setting to run on docker-machine $MACHINEID ..."
     eval $(docker-machine env $MACHINEID)
+    if [ "$DOCKER_MACHINE_NAME" != "$MACHINEID" ]
+    then
+        echo .
+        echo .
+        echo "I cannot set up this machine. "
+        echo "Do you have the proper certificates? Is it exists? Is it running?"
+        exit 1
+    fi
 fi
 
 
@@ -63,6 +71,7 @@ echo "+--------------------------------------------------------------------"
 echo "| Check configuration before proceed"
 echo "|"
 echo "| MACHINE_ID=${MACHINEID}"
+echo "| MACHINE HOST=${DOCKER_HOST}"
 echo "| ENVIRONMENT=${MACINEENV}"
 echo "| Remove Images: ${IMAGES}"
 echo "+--------------------------------------------------------------------"
