@@ -13,6 +13,6 @@ service docker restart
 
 echo "-------------------------------------------------------------------------------------"
 echo "Docker add to the user '$(who -m | awk '{print $1;}')'"
-echo "You need to run 'newgrp docker' or logout in order to get docker working to this user'
+echo "You need to run 'newgrp docker' or logout in order to get docker working to this user"
 echo "-------------------------------------------------------------------------------------"
 echo 
