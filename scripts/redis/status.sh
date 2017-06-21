@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus redis
+dockerStatus $USD_SERVICE

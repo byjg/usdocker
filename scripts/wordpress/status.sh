@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus wordpress
+dockerStatus $USD_SERVICE

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus kibana
+dockerStatus $USD_SERVICE

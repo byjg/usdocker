@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus postgres
+dockerStatus $USD_SERVICE

@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus mysql
+dockerStatus $USD_SERVICE

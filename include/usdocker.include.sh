@@ -121,6 +121,25 @@ dockerStatus() {
     echo "$1 is down"
 }
 
+dockerConnect() {
+    source "$USD_SCRIPTS/$1/setup.sh"
+    docker exec -it $1${CONTAINER_NAME_SUFFIX} bash
+}
+
+dockerDown() {
+    dockerMachineWarning
+
+    source "$USD_SCRIPTS/$1/setup.sh"
+
+    docker stop $1${CONTAINER_NAME_SUFFIX}
+    docker rm $1${CONTAINER_NAME_SUFFIX}
+}
+
+dockerRestart() {
+    source "$USD_SCRIPTS/$1/down.sh"
+    source "$USD_SCRIPTS/$1/up.sh"
+}
+
 resetQuestion() {
     if [ "$1" == "--reset" ] || [ "$1" == "--reset-env" ] || [ "$1" == "--reset-data" ]
     then

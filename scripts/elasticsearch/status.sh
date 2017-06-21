@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus elasticsearch
+dockerStatus $USD_SERVICE

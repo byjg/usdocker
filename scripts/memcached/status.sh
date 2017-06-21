@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-dockerStatus memcached
+dockerStatus $USD_SERVICE
