@@ -20,7 +20,7 @@ then
 fi
 
 MACHINEID=$1
-MACINEENV=$2
+MACHINEENV=$2
 IMAGES=$3
 
 if [ ! -f "docker-compose.yml" ]
@@ -30,9 +30,9 @@ then
     exit 1
 fi
 
-if [ ! -f "docker-compose-${MACINEENV}.yml" ]
+if [ ! -f "docker-compose-${MACHINEENV}.yml" ]
 then
-    echo "File 'docker-compose-${MACINEENV}.yml' does no exists"
+    echo "File 'docker-compose-${MACHINEENV}.yml' does no exists"
     echo
     exit 1
 fi
@@ -72,7 +72,7 @@ echo "| Check configuration before proceed"
 echo "|"
 echo "| MACHINE_ID=${MACHINEID}"
 echo "| MACHINE HOST=${DOCKER_HOST}"
-echo "| ENVIRONMENT=${MACINEENV}"
+echo "| ENVIRONMENT=${MACHINEENV}"
 echo "| Remove Images: ${IMAGES}"
 echo "+--------------------------------------------------------------------"
 echo
@@ -91,7 +91,7 @@ fi
 echo   ...removing volumes
 docker volume ls -q | xargs docker volume rm
 echo   ...building and UP new image
-docker-compose -f docker-compose.yml -f docker-compose-${MACINEENV}.yml up -d --build
+docker-compose -f docker-compose.yml -f docker-compose-${MACHINEENV}.yml up -d --build
 
 # Restore Setup
 echo Restoring setup...
