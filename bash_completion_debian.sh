@@ -12,7 +12,7 @@ _usdocker()
   if [ "$prev" == "usdocker" ]; then
       _script_commands="$(usdocker .autocomplete get) env self-update"
 
-  elif [ "$cur" != "env" ] && [ "$prev" != "env" ] && [ "$COMP_CWORD" == "2" ]; then
+  elif [ "$cur" != "env" ] && [ "$prev" != "env" ]  && [ "$prev" != "self-update" ] && [ "$COMP_CWORD" == "2" ]; then
       _script_commands="`usdocker .autocomplete get $prev` env"
 
   elif [ "$prev" == "setup" ]; then
