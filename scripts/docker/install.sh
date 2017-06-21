@@ -8,11 +8,11 @@ fi
 wget -qO- https://get.docker.com/ | sh
 
 groupadd docker
-gpasswd -a $(who -m | awk '{print $1;}') docker
+gpasswd -a ${SUDO_USER:-$(whoami)} docker
 service docker restart
 
-echo "-------------------------------------------------------------------------------------"
-echo "Docker add to the user '$(who -m | awk '{print $1;}')'"
-echo "You need to run 'newgrp docker' or logout in order to get docker working to this user"
-echo "-------------------------------------------------------------------------------------"
+echo "-------------------------------------------------------------------------------------------"
+echo "Docker add to the user '${SUDO_USER:-$(whoami)}'"
+echo "Maybe you need to run 'newgrp docker' or logout in order to get docker working to this user"
+echo "-------------------------------------------------------------------------------------------"
 echo 
