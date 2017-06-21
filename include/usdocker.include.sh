@@ -75,6 +75,7 @@ checkDockerInstalled() {
         echo "Docker was not installed. Press ENTER to install or CTRL+C for abort"
         read
         usdocker docker install
+        exit
     fi
 }
 
