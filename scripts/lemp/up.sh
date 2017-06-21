@@ -2,13 +2,29 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/lemp/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-# Build and Run LEMP
-cd "$USD_HOME/lemp/"
-eval $(cat $USD_HOME/lemp/environment) \
-eval $(cat $USD_HOME/environment) \
-docker-compose -f docker-compose.yml up -d --build
+if [ -z "$APPLICATION_ENV" ]; then
+    APPLICATION_ENV="dev"
+fi
 
-checkIsRunning lemp-fpm$CONTAINER_NAME_SUFFIX
-checkIsRunning lemp-nginx$CONTAINER_NAME_SUFFIX
+docker run \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} `linkContainer` \
+    -e "LEMP_DATA_FOLDER=${LEMP_DATA_FOLDER}" \
+    -e "LEMP_PORT=${LEMP_PORT}" \
+    -e "LEMP_SSL_PORT=${LEMP_SSL_PORT}" \
+    -e "APPLICATION_ENV=${APPLICATION_ENV}" \
+    -p "$LEMP_PORT:80" \
+    -p "$LEMP_SSL_PORT:443" \
+    -v `adjustLocalDirectories "$LEMP_DATA_FOLDER" /srv/web` \
+    -v `adjustLocalDirectories "$USD_HOME/$USD_SERVICE/conf/fpm/fpmpool/zz-docker-2.conf" /usr/local/etc/php-fpm.d/zz-docker-2.conf` \
+    -v `adjustLocalDirectories "$USD_HOME/$USD_SERVICE/conf/fpm/php/custom.ini" /usr/local/etc/php/conf.d/custom.ini` \
+    -v `adjustLocalDirectories "$USD_HOME/$USD_SERVICE/conf/nginx/conf.d" /etc/nginx/conf.d/` \
+    -e TZ=${TZ} \
+    -d ${LEMP_IMAGE}
+
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}
+
+echo "$USD_HOME/$USD_SERVICE/conf/fpm/fpmpool/zz-docker-2.conf"
+echo "$USD_HOME/$USD_SERVICE/conf/fpm/php/custom.ini"
+echo "$USD_HOME/$USD_SERVICE/conf/nginx/conf.d"
