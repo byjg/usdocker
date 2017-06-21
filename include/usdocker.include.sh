@@ -70,6 +70,14 @@ checkIsRunning() {
     fi
 }
 
+checkDockerInstalled() {
+    if ! hash realpath 2>/dev/null; then
+        echo "Docker was not installed. Press ENTER to install or CTRL+C for abort"
+        read
+        usdocker docker install
+    fi
+}
+
 checkDependency() {
     RESULT=`docker ps  | grep -c $1${CONTAINER_NAME_SUFFIX}`
 
