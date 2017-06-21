@@ -70,6 +70,17 @@ checkIsRunning() {
     fi
 }
 
+checkDependency() {
+    RESULT=`docker ps  | grep -c $1${CONTAINER_NAME_SUFFIX}`
+
+    if [ "$RESULT" == "0" ]
+    then
+        echo "This script requires '$1'. Press CTRL+C for abort or ENTER to start '$1' and continue"
+        read
+        usdocker $1 up
+    fi
+}
+
 dockerMachineWarning() {
     if [ ! -z "$DOCKER_HOST" ]
     then

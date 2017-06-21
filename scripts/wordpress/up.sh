@@ -2,6 +2,8 @@
 
 dockerMachineWarning
 
+checkDependency mysql
+
 source "$USD_SCRIPTS/wordpress/setup.sh"
 
 docker run  \

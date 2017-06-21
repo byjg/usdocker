@@ -2,6 +2,8 @@
 
 dockerMachineWarning
 
+checkDependency elasticsearch
+
 source "$USD_SCRIPTS/kibana/setup.sh"
 
 docker run \
