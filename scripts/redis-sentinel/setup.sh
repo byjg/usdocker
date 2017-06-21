@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
 # Environment
-setupEnvironment redis-sentinel/environment REDIS_SENTINEL_IMAGE miko2u/redis-sentinel
-setupEnvironment redis-sentinel/environment REDIS_SENTINEL_FOLDER \${USD_DATA}/redis-sentinel
-setupEnvironment redis-sentinel/environment REDIS_SENTINEL_PORT 26379
-source "$USD_HOME/redis-sentinel/environment"
+setupEnvironment ${USD_SERVICE}/environment IMAGE miko2u/redis-sentinel
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment PORT 26379
+source "$USD_HOME/${USD_SERVICE}/environment"
 
 # Reset Question
 resetQuestion $1
 resetEnvironment $1
-resetData $1 $REDIS_SENTINEL_FOLDER
+resetData $1 "$REDIS_SENTINEL_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
 setKeyValue $1 $2 $3
 
 # Data
-if [ ! -d "$USD_HOME/redis-sentinel" ]
+if [ ! -d "$USD_HOME/${USD_SERVICE}" ]
 then
-    mkdir -p "$USD_HOME/redis-sentinel"
-    cp -r "$USD_SCRIPTS/redis-sentinel/conf" "$USD_HOME/redis-sentinel"
+    mkdir -p "$USD_HOME/${USD_SERVICE}"
+    cp -r "$USD_SCRIPTS/${USD_SERVICE}/conf" "$USD_HOME/${USD_SERVICE}"
 fi
 

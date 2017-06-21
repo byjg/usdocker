@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
 # Environment
-setupEnvironment wordpress/environment WORDPRESS_IMAGE wordpress:4.7-php7.1
-setupEnvironment wordpress/environment WORDPRESS_PLUGIN_FOLDER \${USD_DATA}/wordpress/plugins
-setupEnvironment wordpress/environment WORDPRESS_THEME_FOLDER \${USD_DATA}/wordpress/themes
-setupEnvironment wordpress/environment WORDPRESS_UPLOAD_FOLDER \${USD_DATA}/wordpress/uploads
-setupEnvironment wordpress/environment WORDPRESS_LANGUAGES_FOLDER \${USD_DATA}/wordpress/languages
-setupEnvironment wordpress/environment WORDPRESS_PORT 8080
-setupEnvironment wordpress/environment WORDPRESS_DB_HOST mysql\${CONTAINER_NAME_SUFFIX}:3306
-setupEnvironment wordpress/environment WORDPRESS_DB_USER root
-setupEnvironment wordpress/environment WORDPRESS_DB_PASSWORD password
-source "$USD_HOME/wordpress/environment"
+setupEnvironment ${USD_SERVICE}/environment IMAGE wordpress:4.7-php7.1
+setupEnvironment ${USD_SERVICE}/environment PLUGIN_FOLDER \${USD_DATA}/\${USD_SERVICE}/plugins
+setupEnvironment ${USD_SERVICE}/environment THEME_FOLDER \${USD_DATA}/\${USD_SERVICE}/themes
+setupEnvironment ${USD_SERVICE}/environment UPLOAD_FOLDER \${USD_DATA}/\${USD_SERVICE}/uploads
+setupEnvironment ${USD_SERVICE}/environment LANGUAGES_FOLDER \${USD_DATA}/\${USD_SERVICE}/languages
+setupEnvironment ${USD_SERVICE}/environment PORT 8080
+setupEnvironment ${USD_SERVICE}/environment DB_HOST mysql\${CONTAINER_NAME_SUFFIX}:3306
+setupEnvironment ${USD_SERVICE}/environment DB_USER root
+setupEnvironment ${USD_SERVICE}/environment DB_PASSWORD password
+source "$USD_HOME/${USD_SERVICE}/environment"
 
 # Reset Question
 resetQuestion $1
@@ -25,10 +25,10 @@ resetFinsih $1
 setKeyValue $1 $2 $3
 
 # Data
-if [ ! -d "$USD_HOME/wordpress/conf" ]
+if [ ! -d "$USD_HOME/${USD_SERVICE}/conf" ]
 then
-    mkdir -p "$USD_HOME/wordpress/conf"
-    cp -r "$USD_SCRIPTS/wordpress/conf" "$USD_HOME/wordpress"
+    mkdir -p "$USD_HOME/${USD_SERVICE}/conf"
+    cp -r "$USD_SCRIPTS/${USD_SERVICE}/conf" "$USD_HOME/${USD_SERVICE}"
 fi
 
 if [ ! -d "$WORDPRESS_UPLOAD_FOLDER" ]

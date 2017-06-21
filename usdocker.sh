@@ -61,6 +61,7 @@ then
 fi
 
 USD_SERVICE="$1"
+USD_LABEL="${1^^}"
 
 if [ ! -d "$USD_SCRIPTS/$USD_SERVICE" ]
 then

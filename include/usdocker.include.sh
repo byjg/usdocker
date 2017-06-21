@@ -40,8 +40,14 @@ setupEnvironment() {
     mkdir -p `dirname $FILE`
     touch "$FILE"
 
-    if ! grep -q "$2=" "$FILE"; then
-        echo "$2=$3" >> "$FILE"
+    KEY="${USD_SERVICE^^}_${2^^}"
+    KEY="${KEY//-/_}"
+    if [ "${KEY:0:1}" == "_" ]; then
+        KEY="${KEY:1}"
+    fi
+
+    if ! grep -q "${KEY}=" "$FILE"; then
+        echo "${KEY}=$3" >> "$FILE"
     fi
 }
 
@@ -198,8 +204,8 @@ setKeyValue() {
         then
             echo "You need pass the KEY and VALUE to be setup"
         fi
-        KEY=$2
-        VALUE=$3
+        KEY="${2^^}"
+        VALUE="$3"
         sed -i'' -e "s/^$KEY=.*$/$KEY=$VALUE/g" "${USD_HOME}/${USD_SERVICE}/environment"
         exit
     fi
