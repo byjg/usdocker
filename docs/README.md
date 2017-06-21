@@ -56,11 +56,12 @@ usdocker docker-machine install
 
 ## Useful Scripts Available
 
-Today we are the following Useful Scripts:
+Today we have the following Useful Scripts:
 - [docker](docker)
 - [docker-compose](docker-compose)
 - [docker-machine](docker-machine)
 - [elasticsearch](elasticsearch)
+- [jekyll](jekyll)
 - [kibana](kibana)
 - [memcached](memcached)
 - [mongodb](mongodb)
