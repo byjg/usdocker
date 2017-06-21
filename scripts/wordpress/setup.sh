@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Environment
-setupEnvironment ${USD_SERVICE}/environment IMAGE wordpress:4.7-php7.1
+setupEnvironment ${USD_SERVICE}/environment IMAGE wordpress:4.8-php7.1
 setupEnvironment ${USD_SERVICE}/environment PLUGIN_FOLDER \${USD_DATA}/\${USD_SERVICE}/plugins
 setupEnvironment ${USD_SERVICE}/environment THEME_FOLDER \${USD_DATA}/\${USD_SERVICE}/themes
 setupEnvironment ${USD_SERVICE}/environment UPLOAD_FOLDER \${USD_DATA}/\${USD_SERVICE}/uploads
