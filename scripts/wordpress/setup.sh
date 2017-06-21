@@ -35,12 +35,12 @@ if [ ! -d "$WORDPRESS_UPLOAD_FOLDER" ]
 then
     mkdir -p "$WORDPRESS_UPLOAD_FOLDER"
     echo
-    echo "It is necessary adjust permission as superuser."
-    echo "If the command below fails, please execute it manually before start using"
+    echo "# It is necessary adjust permission as superuser."
+    echo "# If the command below fails, please execute it manually before start using"
     echo
-    echo "----------------------------------------------"
-    echo "sudo chown 33:33 \"$WORDPRESS_UPLOAD_FOLDER\""
-    echo "----------------------------------------------"
+    echo "# ----------------------------------------------"
+    echo "# sudo chown 33:33 \"$WORDPRESS_UPLOAD_FOLDER\""
+    echo "# ----------------------------------------------"
     echo
     sudo chown 33:33 "$WORDPRESS_UPLOAD_FOLDER"
 fi

@@ -197,5 +197,11 @@ printGlobalEnvironment() {
 
 printServiceEnvironment() {
     printGlobalEnvironment
-    cat "$USD_HOME/$USD_SERVICE/environment"
+    if [ -f "$USD_SCRIPTS/$USD_SERVICE/setup.sh" ]; then
+        source "$USD_SCRIPTS/$USD_SERVICE/setup.sh"
+    fi
+
+    if [ -f "$USD_HOME/$USD_SERVICE/environment" ]; then 
+        cat "$USD_HOME/$USD_SERVICE/environment"
+    fi
 }
