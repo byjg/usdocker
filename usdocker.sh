@@ -27,8 +27,6 @@ mkdir -p "$USD_HOME"
 USD_DATA="${HOME}/.usdocker_data"
 mkdir -p "$USD_HOME"
 
-checkDockerInstalled
-
 setupEnvironment environment TZ `getLocalTimeZone`
 setupEnvironment environment CONTAINER_NAME_SUFFIX -container
 setupEnvironment environment LOCAL_HOME /home/
@@ -104,5 +102,7 @@ then
     exit 1
 fi
 shift
+
+checkDockerInstalled
 
 source "${USD_SCRIPTS}/${USD_SERVICE}/${USD_COMMAND}.sh"
