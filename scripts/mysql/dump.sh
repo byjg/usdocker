@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/mysql/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-docker exec mysql${CONTAINER_NAME_SUFFIX} /root/mysqldump.sh $1
+docker exec ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} /root/mysqldump.sh $1
 

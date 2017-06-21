@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/mongodb/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-docker exec -it mongodb${CONTAINER_NAME_SUFFIX} mongo "$@"
+docker exec -it ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} mongo "$@"

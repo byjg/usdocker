@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/php/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run -it --rm \
     -p 9001:9001 \
@@ -14,5 +14,5 @@ docker run -it --rm \
     -v /tmp:/tmp \
     -e TZ=${TZ} \
     `linkContainer` ${EXTRA_PARAM} \
-    byjg/php7:alpine php -d error_reporting=6143 "$@"
+    ${PHP_IMAGE7} php -d error_reporting=6143 "$@"
 

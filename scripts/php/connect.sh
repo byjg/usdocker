@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/php/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run -it --rm \
     -p 9001:9001 \
@@ -12,5 +12,5 @@ docker run -it --rm \
     -v /etc/group:/etc/group:ro \
     -v /tmp:/tmp \
     `linkContainer` ${EXTRA_PARAM} \
-    byjg/php7:alpine sh
+    ${PHP_IMAGE7} sh
 

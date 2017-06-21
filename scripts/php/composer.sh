@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/php/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run -it --rm \
     -v `adjustLocalDirectories $PWD /opt/project` \
@@ -12,5 +12,5 @@ docker run -it --rm \
     -v /etc/group:/etc/group:ro \
     -v /tmp:/tmp \
     -e TZ=${TZ} \
-    byjg/php7:alpine composer "$@"
+    ${PHP_IMAGE7} composer "$@"
 

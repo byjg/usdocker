@@ -2,10 +2,10 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/mssql/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run \
-    --name mssql${CONTAINER_NAME_SUFFIX} \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} \
     -e 'ACCEPT_EULA=Y' \
     -e 'SA_PASSWORD=Pa$$word!' \
     -p ${MSSQL_PORT}:1433 \
@@ -13,4 +13,4 @@ docker run \
     -e TZ=${TZ} \
     -d ${MSSQL_IMAGE}
 
-checkIsRunning mssql${CONTAINER_NAME_SUFFIX}
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}

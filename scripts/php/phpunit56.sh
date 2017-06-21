@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/php/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run -it --rm \
     -v `adjustLocalDirectories $PWD /opt/project` \
@@ -13,5 +13,5 @@ docker run -it --rm \
     -v /tmp:/tmp \
     `linkContainer` \
     -e TZ=${TZ} \
-    byjg/php56:alpine phpunit -d error_reporting=6143 "$@"
+    ${PHP_IMAGE56} phpunit -d error_reporting=6143 "$@"
 

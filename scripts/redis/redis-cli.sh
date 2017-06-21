@@ -2,6 +2,6 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/redis/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-docker exec -it redis${CONTAINER_NAME_SUFFIX} redis-cli
+docker exec -it ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} redis-cli

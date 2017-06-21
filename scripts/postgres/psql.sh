@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/postgres/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-docker exec -it postgres${CONTAINER_NAME_SUFFIX} psql "$@"
+docker exec -it ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} psql "$@"
 

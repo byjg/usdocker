@@ -2,14 +2,14 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/mongodb/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run \
-    --name mongodb${CONTAINER_NAME_SUFFIX} \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} \
     -v `adjustLocalDirectories "${MONGODB_FOLDER}" "/data/db"` \
     -v /tmp:/tmp \
     -p ${MONGODB_PORT}:27017 \
     -e TZ=America/Sao_Paulo \
     -d ${MONGODB_IMAGE}
 
-checkIsRunning mongodb${CONTAINER_NAME_SUFFIX}
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}

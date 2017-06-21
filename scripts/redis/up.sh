@@ -2,10 +2,10 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/redis/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run \
-    --name redis${CONTAINER_NAME_SUFFIX} \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} \
     -v `adjustLocalDirectories "${USD_HOME}/redis/conf/redis.conf" "/etc/redis.conf"` \
     -p ${REDIS_PORT}:6379 \
     -v `adjustLocalDirectories "${REDIS_FOLDER}" "/data"` \
@@ -13,4 +13,4 @@ docker run \
     -d ${REDIS_IMAGE} \
     redis-server /etc/redis.conf
 
-checkIsRunning redis${CONTAINER_NAME_SUFFIX}
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}

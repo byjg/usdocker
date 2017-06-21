@@ -2,10 +2,10 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/elasticsearch/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run \
-    --name elasticsearch${CONTAINER_NAME_SUFFIX} \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} \
     --cap-add=IPC_LOCK \
     --ulimit memlock=-1:-1 \
     --ulimit nofile=65536:65536 \
@@ -13,9 +13,9 @@ docker run \
     --publish-all \
     -p "${ELASTICSEARCH_PORT}:9200" \
     -v `adjustLocalDirectories "${ELASTICSEARCH_FOLDER}/data" "/usr/share/elasticsearch/data"` \
-    -v `adjustLocalDirectories "$USD_HOME/elasticsearch/conf/custom.yml" /usr/share/elasticsearch/config/elasticsearch.yml` \
+    -v `adjustLocalDirectories "$USD_HOME/${USD_SERVICE}/conf/custom.yml" /usr/share/elasticsearch/config/elasticsearch.yml` \
     -d ${ELASTICSEARCH_IMAGE}
 
-checkIsRunning elasticsearch${CONTAINER_NAME_SUFFIX}
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}
 
 #    -e TZ=${TZ} \

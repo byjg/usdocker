@@ -2,10 +2,10 @@
 
 dockerMachineWarning
 
-source "$USD_SCRIPTS/postgres/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run \
-    --name postgres${CONTAINER_NAME_SUFFIX} \
+    --name ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} \
     -v `adjustLocalDirectories ${POSTGRES_FOLDER} /var/lib/postgresql/data` \
     -v /tmp:/tmp \
     -e POSTGRES_USER=${POSTGRES_USER} \
@@ -14,4 +14,4 @@ docker run \
     -e TZ=${TZ} \
     -d ${POSTGRES_IMAGE}
 
-checkIsRunning postgres${CONTAINER_NAME_SUFFIX}
+checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/php/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
 docker run -it --rm \
     -v `adjustLocalDirectories $PWD /opt/project` \
@@ -10,5 +10,5 @@ docker run -it --rm \
     -v /etc/passwd:/etc/passwd:ro \
     -v /etc/group:/etc/group:ro \
     -e TZ=${TZ} \
-    byjg/php7:alpine phpmd "$@"
+    ${PHP_IMAGE7} phpmd "$@"
 

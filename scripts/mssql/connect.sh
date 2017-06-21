@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$USD_SCRIPTS/mssql/setup.sh"
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
 
-docker exec -it mssql${CONTAINER_NAME_SUFFIX} bash
+docker exec -it ${USD_SERVICE}${CONTAINER_NAME_SUFFIX} bash
 
