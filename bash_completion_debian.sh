@@ -10,7 +10,7 @@ _usdocker()
   command="${COMP_WORDS[2]}"
 
   if [ "$prev" == "usdocker" ]; then
-      _script_commands="$(usdocker .autocomplete get) env"
+      _script_commands="$(usdocker .autocomplete get) env self-update"
 
   elif [ "$cur" != "env" ] && [ "$prev" != "env" ] && [ "$COMP_CWORD" == "2" ]; then
       _script_commands="`usdocker .autocomplete get $prev` env"

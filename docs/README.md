@@ -21,7 +21,21 @@ usdocker mysql up
 
 If you call `usdocker SERVICE` without the command you get the help for the service
 
-## Installing usdocker
+## Installing usdocker 
+
+### Install from Git (recommended)
+
+```
+sudo rm -rf /opt/usdocker
+sudo git clone https://github.com/byjg/usdocker.git /opt/usdocker
+sudo /opt/usdocker/install/install.sh
+```
+
+Using this method you can maintain 'usdocker' updated by using:
+
+```
+sudo usdocker self-update
+```
 
 ### Using the setup script
 
@@ -29,13 +43,6 @@ If you call `usdocker SERVICE` without the command you get the help for the serv
 wget -O /tmp/latest http://latest.usdocker.com && sudo bash /tmp/latest && rm /tmp/latest
 ```
 
-### Install from Git
-
-```
-sudo rm -rf /opt/usdocker
-sudo git clone https://github.com/byjg/usdocker.git /opt/usdocker
-sudo /opt/usdocker/install/install.sh
-```
 
 ## Installing docker, docker-compose and docker-machine
 

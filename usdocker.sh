@@ -50,6 +50,24 @@ then
     exit
 fi
 
+if [ "$1" == "self-update" ]
+then
+    if [[ $EUID -ne 0 ]]; then
+       echo "This script must be run as root" 1>&2
+       exit 1
+    fi
+
+    if hash realpath 2>/dev/null; then
+        SCRIPT=`realpath $0`
+        SCRIPTPATH=`dirname ${SCRIPT}`
+        cd "${SCRIPTPATH}"
+        git pull
+    else
+        echo "Cannot update because 'realpath' bash command does not exists"
+    fi
+    exit
+fi
+
 USD_SERVICE="$1"
 
 if [ ! -d "$USD_SCRIPTS/$USD_SERVICE" ]
