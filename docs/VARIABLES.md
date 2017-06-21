@@ -1,4 +1,6 @@
-# USDocker Global Variables
+# USDocker Variables
+
+## Global
 
 USDocker defines several variables for make it easier create your
 script. Prefer use these variables:
@@ -14,6 +16,38 @@ script. Prefer use these variables:
 | USD_DOCS       | Documentation directory  |
 | USD_HOME       | Current user's directory where custom definition are located |
 | USD_DATA       | Current user's directory where volumes shared with the container are stored  |
+
+## Environment
+
+Besides the global variables, USDocker defines a set of other variables like 'TZ', 
+'CONTAINER_NAME_SUFFIX' and the variables defined in your 'setup.sh' using the setupEnvironment helper. 
+
+The scope of this variables is only on run-time. You can check this variables by using the command:
+
+*global variables*
+
+```
+usdocker env
+```
+
+*service scope variables*
+
+```
+usdocker YOURSERVICE env
+```
+
+You can set all variables (except the globals) using the command:
+
+```
+usdocker YOURSERVICE setup --set "VARIABLE" "VALUE"
+```
+
+You can also reset all variables values and return to defaults by using: 
+
+```
+usdocker YOURSERVICE setup --reset-env
+```
+
 
 
 

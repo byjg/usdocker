@@ -143,4 +143,4 @@ All extra parameter is passed to your script following the order `$1`, `$2`, and
 
 ## Global Variables
 
-See also the [USDocker global variables](VARIABLES)
+See also the how to use the [USDocker variables](VARIABLES)
