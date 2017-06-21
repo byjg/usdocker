@@ -103,6 +103,7 @@ then
 fi
 shift
 
-checkDockerInstalled
-
+if [ "$USD_SERVICE" != ".autocomplete" ] && [ "$USD_SERVICE" != "docker" ]; then  
+    checkDockerInstalled
+fi
 source "${USD_SCRIPTS}/${USD_SERVICE}/${USD_COMMAND}.sh"

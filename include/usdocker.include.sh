@@ -74,7 +74,8 @@ checkDockerInstalled() {
     if ! hash docker 2>/dev/null; then
         echo "Docker was not installed. Press ENTER to install or CTRL+C for abort"
         read
-        usdocker docker install
+        echo "Using 'sudo' for install docker"
+        sudo usdocker docker install
         exit
     fi
 }
