@@ -74,7 +74,7 @@ Today we have the following Useful Scripts:
 - [wordpress](wordpress)
 
 Did not found the service you want? Feel free to create it and send to us again! 
-Follow our [guide](GUIDE) to create your own.
+Follow our [guide](GUIDE), read about [variables](VARIABLES) and [directories](DIRECTORIES) to create your own script.
 
 ## Most common Useful Scripts commands
 
@@ -132,7 +132,7 @@ Note that this operation is irreversible.
 ## Contributing 
 
 If you wanna contributing  to our project and create your own Useful Script for Docker, 
-follow our [guide](GUIDE) to create your own.
+follow our [guide](GUIDE), read about [variables](VARIABLES) and [directories](DIRECTORIES) to create your own.
 
 
 ## *Live/Production environment*
