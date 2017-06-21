@@ -8,8 +8,8 @@ usdocker docker-compose install
 
 ## docker-compose replacement 
 
-You have a Useful Script replacement for "docker-compose up". This scripts will create a fresh clean container
-every time. 
+You have a Useful Script replacement for "docker-compose up". This scripts will deal with different docker-compose file
+and create a fresh clean container every time. 
 
 You can handle easily different deploy environments by using customizable settings in docker-composer.
 
