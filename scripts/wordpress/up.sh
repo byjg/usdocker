@@ -14,6 +14,7 @@ docker run  \
     -v `adjustLocalDirectories "$WORDPRESS_PLUGIN_FOLDER" /var/www/html/wp-content/plugins` \
     -v `adjustLocalDirectories "$WORDPRESS_THEME_FOLDER" /var/www/html/wp-content/themes` \
     -v `adjustLocalDirectories "$WORDPRESS_UPLOAD_FOLDER" /var/www/html/wp-content/uploads` \
+    -v `adjustLocalDirectories "$WORDPRESS_LANGUAGES_FOLDER" /var/www/html/wp-content/languages` \
     -v `adjustLocalDirectories "${USD_HOME}/${USD_SERVICE}/conf/uploads.ini" /usr/local/etc/php/conf.d/uploads.ini` \
     -p ${WORDPRESS_PORT}:80 \
     -e TZ=${TZ} \
