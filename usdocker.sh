@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 # Define REAL PATH
-if [ -x "`which realpath`" ]
-then
+if hash realpath 2>/dev/null; then
     USD_DIR=`realpath $0`
     USD_DIR=`dirname $USD_DIR`
 else
@@ -56,14 +55,8 @@ then
        exit 1
     fi
 
-    if hash realpath 2>/dev/null; then
-        SCRIPT=`realpath $0`
-        SCRIPTPATH=`dirname ${SCRIPT}`
-        cd "${SCRIPTPATH}"
-        git pull
-    else
-        echo "Cannot update because 'realpath' bash command does not exists"
-    fi
+    cd $USD_DIR
+    git pull
     exit
 fi
 
