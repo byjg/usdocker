@@ -7,32 +7,33 @@ The server will be recognize the domain and select dynamically the folder where 
 The default ROOT for the server is:
 
 ```
-$HOME/usdocker-lemp
+$HOME/.usdocker_data/lemp
 ```
 
 If you wanna serve pages for domain "example.com" you just have to create a folder:
 
 ```
-$HOME/usdocker-lemp/example.com
+usdocker lemp domain-add example.com
 ```
 
-And you will serve pages for this domain immediatelly. If inside this folder you have any of this folders:
+And you will serve pages for this domain immediatelly. 
+This script tries to find the follow directories to server web pages:
 
 - web
 - httpdocs
 - public 
 
-the root directory will be:
+If found, the directory for the web pages will be, respectively:
 
 ```
-$HOME/usdocker-lemp/example.com/web
+$HOME/.usdocker_data/lemp/example.com/web
 or
-$HOME/usdocker-lemp/example.com/httpdocs
+$HOME/.usdocker_data/lemp/example.com/httpdocs
 or
-$HOME/usdocker-lemp/example.com/public
+$HOME/.usdocker_data/lemp/example.com/public
 ```
 
-The script pre-route PHP files called index.php or web.php.
+If not found will serve the root directory directly
 
 ## Let's start:
 
@@ -40,3 +41,4 @@ The script pre-route PHP files called index.php or web.php.
 usdocker mysql up
 usdocker lemp up
 ```
+
