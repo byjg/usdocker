@@ -230,3 +230,17 @@ printServiceEnvironment() {
         cat "$USD_HOME/$USD_SERVICE/environment"
     fi
 }
+
+showHeader() {
+    if [ -d .git ]; then
+        BRANCH=$(cat .git/HEAD | cut -d/  -f 3)
+        HASH=$(cat .git/`cat .git/HEAD | cut -d \  -f 2` | cut -c1-7)
+        VERSION="($BRANCH@$HASH)"
+    fi
+    if [ -f .version ]; then
+        VERSION="v$(cat .version) $VERSION"
+    fi
+    echo
+    echo USDocker $VERSION
+    echo
+}

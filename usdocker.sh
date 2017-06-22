@@ -34,10 +34,13 @@ source "$USD_HOME/environment"
 
 if [ -z "$1" ]
 then
-    echo You need to pass the useful script service you want:
+    showHeader
+    echo "Usage:"
+    echo " - usdocker <script> <command> [args]"
     echo
-    echo Available:
-    find "${USD_SCRIPTS}/." -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort
+    echo "Where <scripts> are:"
+    find "${USD_SCRIPTS}/." -maxdepth 1  ! -name '.*' -type d -exec basename "{}" \; | sort | sed -e 's/^/ - /'
+    echo " - self-update"
     echo
     exit 1
 fi
@@ -65,6 +68,7 @@ USD_LABEL="${1^^}"
 
 if [ ! -d "$USD_SCRIPTS/$USD_SERVICE" ]
 then
+    showHeader
     echo "Useful Script Service '$USD_SERVICE' does not exists"
     echo
     exit 1
@@ -73,8 +77,14 @@ shift
 
 if [ -z "$1" ]
 then
-    echo Available usefull script:
-    find "${USD_SCRIPTS}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1
+    showHeader
+    echo Usage:
+    echo " - usdocker $USD_SERVICE <command>"
+    echo
+    echo "The commands available for $USD_SERVICE service are:"
+    find "${USD_SCRIPTS}/$USD_SERVICE/." -maxdepth 1  ! -name '.*' -name '*.sh' -type f -exec basename "{}" \; | sort | cut -d'.' -f1  | sed -e 's/^/ - /'
+    echo
+    echo "Documentation"
     echo
     cat "${USD_DOCS}/$USD_SERVICE.md"
     echo
@@ -91,6 +101,7 @@ USD_COMMAND="$1"
 
 if [ ! -f "$USD_SCRIPTS/$USD_SERVICE/$USD_COMMAND.sh" ]
 then
+    showHeader
     echo "Useful Script commans 'usdocker $USD_SERVICE $USD_COMMAND' does not exists"
     echo
     exit 1
