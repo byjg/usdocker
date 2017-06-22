@@ -21,11 +21,16 @@
         <div>You reach this page because you try to access the domain
             '<span class="highlight"><?php echo $_SERVER['X_Lemp_Domain']; ?></span>'
             but it is not setup properly.</div>
-        <div>Try to create the folder:
+        <div>Try to add the domain by using:
             <code>
-            <?php echo $_ENV['LEMP_DATA_FOLDER'] . '/' . $_SERVER['X_Lemp_Domain']; ?>
+            usdocker lemp domain-add <?php echo $_SERVER['X_Lemp_Domain']; ?>
             </code>
-            and put a index.php or index.html there!
+            <br/>
+            and then add some stuff in the folder:
+            <br/>
+            <code>
+                <?php echo $_ENV['LEMP_DATA_FOLDER'] . '/' . $_SERVER['X_Lemp_Domain']; ?>
+            </code>
         </div>
     </body>
 </html>

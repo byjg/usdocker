@@ -24,7 +24,3 @@ docker run \
     -d ${LEMP_IMAGE}
 
 checkIsRunning ${USD_SERVICE}${CONTAINER_NAME_SUFFIX}
-
-echo "$USD_HOME/$USD_SERVICE/conf/fpm/fpmpool/zz-docker-2.conf"
-echo "$USD_HOME/$USD_SERVICE/conf/fpm/php/custom.ini"
-echo "$USD_HOME/$USD_SERVICE/conf/nginx/conf.d"
