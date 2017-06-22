@@ -20,6 +20,14 @@ PAYLOAD=__usdocker__$RANDOM.tar.gz
 SCRIPT=$1
 TMP=__extract__$RANDOM
 
+if [ ! -z "$TRAVIS_TAG" ]; then
+    echo "v$TRAVIS_TAG" > usdocker/.version
+else
+    BRANCH=$(cat .git/HEAD | cut -d/  -f 3)
+    HASH=$(cat .git/`cat .git/HEAD | cut -d \  -f 2` | cut -c1-7)
+    echo "build ($BRANCH@$HASH)" > usdocker/.version
+fi
+
 tar czvf $PAYLOAD usdocker
 
 printf "#!/usr/bin/env bash
