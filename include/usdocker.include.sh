@@ -238,7 +238,7 @@ showHeader() {
         VERSION="($BRANCH@$HASH)"
     fi
     if [ -f .version ]; then
-        VERSION="v$(cat .version) $VERSION"
+        VERSION="$(cat .version) $VERSION"
     fi
     echo
     echo USDocker $VERSION
