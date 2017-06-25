@@ -67,6 +67,7 @@ Today we have the following Useful Scripts:
 - [mongodb](mongodb)
 - [mssql](mssql)
 - [mysql](mysql)
+- [oracle xe 11g](oracle-xe)
 - [php](php)
 - [postgres](postgres)
 - [redis](redis)
