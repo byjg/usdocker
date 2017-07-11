@@ -16,9 +16,20 @@ if [ -d "$LEMP_DATA_FOLDER/$1" ]; then
     exit 1
 fi
 
-TEMPLATE="$USD_SCRIPTS/${USD_SERVICE}/data/.template"
-if [ -d "$LEMP_DATA_FOLDER/.template" ]; then
-    TEMPLATE="$LEMP_DATA_FOLDER/.template"
+if [ ! -z "$2" ]; then
+    if [ -f "$2" ]; then
+        echo "Using '$2' as template"
+        mkdir -p "$LEMP_DATA_FOLDER/$1/"
+        tar xvf "$2" -C "$LEMP_DATA_FOLDER/$1/"
+    else
+        echo "Error file does not exists!"
+    fi
+else
+    TEMPLATE="$USD_SCRIPTS/${USD_SERVICE}/data/.template"
+    if [ -d "$LEMP_DATA_FOLDER/.template" ]; then
+        TEMPLATE="$LEMP_DATA_FOLDER/.template"
+    fi
+
+    cp -r "$TEMPLATE"  "$LEMP_DATA_FOLDER/$1/"
 fi
 
-cp -r "$TEMPLATE"  "$LEMP_DATA_FOLDER/$1/"

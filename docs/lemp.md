@@ -10,9 +10,11 @@ The default ROOT for the server is:
 $HOME/.usdocker_data/lemp
 ```
 
+## Starting serving a domain
+
 If you wanna serve pages for domain "example.com" you just have to create a folder:
 
-```
+```bash
 usdocker lemp domain-add example.com
 ```
 
@@ -35,9 +37,31 @@ $HOME/.usdocker_data/lemp/example.com/public
 
 If not found will serve the root directory directly
 
-## Let's start:
+## Serve a domain with a previous specific content
 
+Optionally, you can create a domain with a pre-defined content existing in a tar.gz file. 
+ 
+To do this execute:
+
+```bash
+usdocker lemp domain-add example.com /path/to/file.tar.gz
 ```
+
+## Remove a domain
+
+```bash
+usdocker lemp domain-del example.com
+```
+
+## List served domains
+
+```bash
+usdocker lemp domain-list
+```
+
+# Let's start:
+
+```bash
 usdocker mysql up
 usdocker lemp up
 ```
