@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-dockerDown $USD_SERVICE
+source "$USD_SCRIPTS/${USD_SERVICE}/setup.sh"
+
+dockerDown $USD_SERVICE -$1

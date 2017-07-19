@@ -3,13 +3,19 @@
 ## Start the elasticsearch service
 
 ```
-usdocker elasticsearch up
+usdocker elasticsearch up <dev|master|data> [master ip]
 ```
+
+Use:
+
+- 'dev' for create a single local instance
+- 'master' for create a master node
+- 'data' for create a data node. In that case you have to pass the master IP
 
 ## Stop the elasticsearch service
 
 ```
-usdocker elasticsearch down
+usdocker elasticsearch down <dev|master|data>
 ```
 
 ## Check the status

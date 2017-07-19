@@ -137,8 +137,8 @@ dockerDown() {
 
     source "$USD_SCRIPTS/$1/setup.sh"
 
-    docker stop $1${CONTAINER_NAME_SUFFIX}
-    docker rm $1${CONTAINER_NAME_SUFFIX}
+    docker stop $1$2${CONTAINER_NAME_SUFFIX}
+    docker rm $1$2${CONTAINER_NAME_SUFFIX}
 }
 
 dockerRestart() {

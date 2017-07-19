@@ -30,6 +30,9 @@ _usdocker()
   elif [ "$service" == "docker-compose" ] && [ "$command" == "up" ] && [ "$COMP_CWORD" == 4 ]; then
       _script_commands="`ls docker-compose-* | cut -d- -f3 | cut -d. -f1`"
 
+  elif [ "$service" == "elasticsearch" ] && ( [ "$prev" == "up" ] || [ "$prev" == "down" ] ); then
+      _script_commands="dev master data"
+
   else
       _script_commands=""
 
