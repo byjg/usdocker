@@ -21,6 +21,9 @@ _usdocker()
   elif [ "$prev" == "--set" ]; then
       _script_commands="$(usdocker .autocomplete __set $service)"
 
+  elif [ "$service" == "docker" ] && [ "$prev" == "ip" ]; then
+      _script_commands="`docker ps --format '{{.Names}}'`"
+
   elif [ "$service" == "docker-compose" ] && [ "$prev" == "up" ]; then
       _script_commands="`ls ~/.docker/machine/machines/` local"
 

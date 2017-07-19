@@ -31,3 +31,9 @@ usdocker docker status-all
 ```
 usdocker docker down-all
 ```
+
+## Get the docker IP of some container
+
+```
+usdocker docker ip <container>
+```
