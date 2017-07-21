@@ -7,7 +7,7 @@ setupEnvironment ${USD_SERVICE}/environment MEMORY 1g
 setupEnvironment ${USD_SERVICE}/environment PORT 9200
 setupEnvironment ${USD_SERVICE}/environment TRANSPORT 9300
 setupEnvironment ${USD_SERVICE}/environment CLUSTER_NAME docker-cluster
-setupEnvironment ${USD_SERVICE}/environment NODENAME $(hostname)
+setupEnvironment ${USD_SERVICE}/environment NODE_NAME $(hostname)
 setupEnvironment ${USD_SERVICE}/environment PUBLISH_ADDRESS $(ip route get 1 | head -1 | cut -d' ' -f8)
 setupEnvironment ${USD_SERVICE}/environment DISCOVERY_NODES
 setupEnvironment ${USD_SERVICE}/environment NODE_MASTER true
