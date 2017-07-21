@@ -2,7 +2,7 @@
 
 # Environement
 setupEnvironment ${USD_SERVICE}/environment IMAGE redis:3-alpine
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 6379
 source "$USD_HOME/${USD_SERVICE}/environment"
 

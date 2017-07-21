@@ -2,7 +2,7 @@
 
 # Setup Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE docker.elastic.co/kibana/kibana:5.2.2
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 5601
 setupEnvironment ${USD_SERVICE}/environment ELASTICSEARCH_URL http://elasticsearch-container:9200
 

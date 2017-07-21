@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE miko2u/redis-sentinel
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 26379
 source "$USD_HOME/${USD_SERVICE}/environment"
 

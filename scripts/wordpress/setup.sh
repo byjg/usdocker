@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE wordpress:4.8-php7.1
-setupEnvironment ${USD_SERVICE}/environment DATAFOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment DATAFOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PLUGIN_FOLDER \${WORDPRESS_DATAFOLDER}/plugins
 setupEnvironment ${USD_SERVICE}/environment THEME_FOLDER \${WORDPRESS_DATAFOLDER}/themes
 setupEnvironment ${USD_SERVICE}/environment UPLOAD_FOLDER \${WORDPRESS_DATAFOLDER}/uploads

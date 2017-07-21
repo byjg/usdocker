@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE microsoft/mssql-server-linux
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 1433
 source "$USD_HOME/${USD_SERVICE}/environment"
 

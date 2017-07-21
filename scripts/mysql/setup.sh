@@ -2,7 +2,7 @@
 
 # Setup Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE mysql:5.7
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 3306
 setupEnvironment ${USD_SERVICE}/environment ROOT_PASSWORD password
 source "$USD_HOME/${USD_SERVICE}/environment"

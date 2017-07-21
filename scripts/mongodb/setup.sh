@@ -2,8 +2,8 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE mongo:3
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 27017
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
 source "$USD_HOME/${USD_SERVICE}/environment"
 
 # Reset Question

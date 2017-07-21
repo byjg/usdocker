@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE sath89/oracle-xe-11g
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 1521
 setupEnvironment ${USD_SERVICE}/environment APEX 8080
 setupEnvironment ${USD_SERVICE}/environment PROCESSES 500

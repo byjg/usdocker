@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE memcached:alpine
-setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 11211
 setupEnvironment ${USD_SERVICE}/environment MEMORY 1
 source "$USD_HOME/${USD_SERVICE}/environment"

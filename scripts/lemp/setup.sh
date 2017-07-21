@@ -2,7 +2,7 @@
 
 # Environment
 setupEnvironment ${USD_SERVICE}/environment IMAGE byjg/php7-fpm-nginx:alpine
-setupEnvironment ${USD_SERVICE}/environment DATA_FOLDER \${USD_DATA}/\${USD_SERVICE}
+setupEnvironment ${USD_SERVICE}/environment DATA_FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment PORT 80
 setupEnvironment ${USD_SERVICE}/environment SSL_PORT 443
 source "$USD_HOME/lemp/environment"
