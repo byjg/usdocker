@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Setup Environment
-setupEnvironment ${USD_SERVICE}/environment IMAGE docker.elastic.co/elasticsearch/elasticsearch:5.2.2
+setupEnvironment ${USD_SERVICE}/environment IMAGE docker.elastic.co/elasticsearch/elasticsearch:5.5.0
 setupEnvironment ${USD_SERVICE}/environment FOLDER \${USD_DATA}/${USD_SERVICE}
 setupEnvironment ${USD_SERVICE}/environment MEMORY 1g
 setupEnvironment ${USD_SERVICE}/environment PORT 9200
