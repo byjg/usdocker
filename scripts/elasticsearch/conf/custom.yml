@@ -19,3 +19,6 @@ discovery.zen.minimum_master_nodes: 1
 bootstrap.memory_lock: true
 http.host: 0.0.0.0
 transport.host: 127.0.0.1
+
+# Default settings for backup
+path.repo: ["/usr/share/elasticsearch/data/backup"]
