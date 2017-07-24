@@ -106,6 +106,7 @@ dockerMachineWarning() {
         echo
         echo "Press ENTER to continue or CTRL+C to abort"
         echo
+        read
     fi
 }
 
