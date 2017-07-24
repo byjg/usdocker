@@ -20,16 +20,24 @@ USD_DOCS="$USD_DIR/docs"
 
 source "$USD_INCLUDE/usdocker.include.sh"
 
-USD_HOME="${HOME}/.usdocker"
+if [ -z "$USD_BASE" ]; then
+    if [ ! -z "$DOCKER_HOST" ]; then
+        USD_BASE="/mnt/c"
+    else
+        USD_BASE="${HOME}"
+    fi
+fi
+
+USD_HOME="${USD_BASE}/.usdocker"
 mkdir -p "$USD_HOME"
 
-USD_DATA="${HOME}/.usdocker_data"
-mkdir -p "$USD_HOME"
+USD_DATA="${USD_BASE}/.usdocker_data"
+mkdir -p "$USD_DATA"
 
 setupEnvironment environment TZ `getLocalTimeZone`
 setupEnvironment environment CONTAINER_NAME_SUFFIX -container
-setupEnvironment environment LOCAL_HOME /home/
-setupEnvironment environment REMOTE_HOST_SHARE /hosthome/
+setupEnvironment environment MAPPING_DIR_FROM /mnt/c/
+setupEnvironment environment MAPPING_DIR_TO C:/
 source "$USD_HOME/environment"
 
 if [ -z "$1" ]
