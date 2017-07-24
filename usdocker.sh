@@ -24,7 +24,7 @@ USD_HOME="${HOME}/.usdocker"
 mkdir -p "$USD_HOME"
 
 USD_DATA="${HOME}/.usdocker_data"
-mkdir -p "$USD_HOME"
+mkdir -p "$USD_DATA"
 
 setupEnvironment environment TZ `getLocalTimeZone`
 setupEnvironment environment CONTAINER_NAME_SUFFIX -container
