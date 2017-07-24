@@ -206,7 +206,7 @@ setKeyValue() {
         fi
         KEY="${2^^}"
         VALUE="$3"
-        sed -i'' -e "s/^$KEY=.*$/$KEY=$VALUE/g" "${USD_HOME}/${USD_SERVICE}/environment"
+        sed -i'' -e "s%^$KEY=.*$%$KEY=$VALUE%g" "${USD_HOME}/${USD_SERVICE}/environment"
         exit
     fi
 }
