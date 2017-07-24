@@ -13,7 +13,7 @@ resetData $1 "$REDIS_SENTINEL_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data
 if [ ! -d "$USD_HOME/${USD_SERVICE}" ]

@@ -15,7 +15,7 @@ resetData $1 "$KIBANA_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data
 if [ ! -d "$USD_HOME/${USD_SERVICE}/conf" ]

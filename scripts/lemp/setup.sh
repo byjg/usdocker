@@ -14,7 +14,7 @@ resetData $1 $LEMP_DATA_FOLDER
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data
 if [ ! -d "$LEMP_DATA_FOLDER" ]

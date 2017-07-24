@@ -28,7 +28,7 @@ resetData $1 SOMEFOLDER
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data
 cp somesetup $USD_HOME/$USD_SCRIPT

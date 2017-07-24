@@ -17,6 +17,6 @@ resetData $1 "$ORACLE_XE_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data

@@ -14,7 +14,7 @@ resetData $1 "$MYSQL_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 if [ ! -d "$USD_HOME/${USD_SERVICE}" ]
 then

@@ -15,6 +15,6 @@ resetData $1 "$POSTGRES_FOLDER"
 resetFinsih $1
 
 # Set Key and Value
-setKeyValue $1 $2 $3
+setKeyValue "$1" "$2" "$3"
 
 # Data
