@@ -101,11 +101,9 @@ checkDependency() {
 dockerMachineWarning() {
     if [ ! -z "$DOCKER_HOST" ]
     then
-        echo "It seems docker-machine is active and direct to '$DOCKER_HOST'"
-        echo "It is important to note this script is not fully functional in a docker machine environment"
+        echo "WARNING: You are connecting to a remote host at '$DOCKER_HOST'"
         echo
         echo "Press ENTER to continue or CTRL+C to abort"
-        echo
         read
     fi
 }
