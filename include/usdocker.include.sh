@@ -52,15 +52,15 @@ setupEnvironment() {
 }
 
 adjustLocalDirectories() {
-    if [ -z "$DOCKER_MACHINE_NAME" ]
+    if [ -z "$DOCKER_HOST" ]
     then
         echo "$1:$2"
         return
     fi
 
     ORIGINAL="$1"
-    SEARCH="$LOCAL_HOME"
-    REPLACE="$REMOTE_HOST_SHARE"
+    SEARCH="$MAPPING_DIR_FROM"
+    REPLACE="$MAPPING_DIR_TO"
 
     echo "${ORIGINAL/$SEARCH/$REPLACE}:$2"
 }
@@ -78,6 +78,7 @@ checkIsRunning() {
 
 checkDockerInstalled() {
     if ! hash docker 2>/dev/null; then
+
         echo "Docker was not installed. Press ENTER to install or CTRL+C for abort"
         read
         echo "Using 'sudo' for install docker"
