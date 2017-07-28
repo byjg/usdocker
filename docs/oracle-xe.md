@@ -52,12 +52,22 @@ or
 usdocker oracle-xe sqlplus system/oracle
 ```
 
+## Alter 'sys' and 'system' password on startup
+
+```
+usdocker oracle-xe setup --set ORACLE_XE_PASSWORD=newpassword
+usdocker oracle-xe setup --set ALLOW_IMPORT=true
+usdocker oracle-xe up
+```
+
 
 ## Customize "<usd_home>/oracle-xe/environment"
 
 ```
 ORACLE_XE_IMAGE=sath89/oracle-xe-11g
 ORACLE_XE_FOLDER=${USD_DATA}/${USD_SERVICE}
+ORACLE_XE_PASSWORD=oracle
+ORACLE_XE_ALLOW_IMPORT=true
 ORACLE_XE_PORT=1521
 ORACLE_XE_APEX=8080
 ORACLE_XE_PROCESSES=500
